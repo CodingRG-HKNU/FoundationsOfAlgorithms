@@ -13679,7 +13679,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -13713,7 +13713,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
@@ -14009,7 +14009,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
@@ -14043,7 +14043,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
@@ -14378,39 +14378,6 @@ $$0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, \dots$$
 </div>
 </div>
 
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>233</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14487,84 +14454,7 @@ T(n) &amp;= T(n - 1) + T(n - 2) +1  \quad (n \ge 2) \\
 \end{align*}
 </div>
 </div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>증명<ul>
-<li>수학적 귀납법 활용</li>
-<li>교재 14쪽, 정리 1.1 참조.</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#51221;&#47532;-1.1">&#51221;&#47532; 1.1<a class="anchor-link" href="#&#51221;&#47532;-1.1">&#182;</a></h4><ul>
-<li><p>재귀적 알고리즘으로 구성한 재귀 나무구조의 마디의 수를 $T(n)$이라고 하면, 
-  $n \ge 2$인 모든 $n$에 대하여 다음이 성립한다.</p>
-<p>$$T(n) &gt; 2^{n/2}$$</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>증명: ($n$에 대한 수학적 귀납법으로 증명)</li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>귀납시작: <ul>
-<li>$T(2) = T(1) + T(0) + 1 = 3 &gt; 2 = 2^{2/2}$</li>
-<li>$T(3) = T(2) + T(1) + 1 = 5 &gt; 2.83 \approx 2^{3/2}$</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>귀납가정(IH): $2 \le m &lt; n$인 모든 $m$ 에 대해서 $T(m) &gt; 2^{m/2}$이라고 가정.</li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>귀납절차: $T(n) &gt; 2^{n/2}$임을 보이면 됨.</li>
-</ul>
-\begin{align*}
-T(n) &amp;= T(n-1) + T(n-2) + 1              \\
-     &amp;&gt; 2^{(n-1)/2} + 2^{(n-2)/2} + 1 \quad{\text{by (IH)}}   \\
-     &amp;&gt; 2^{(n-2)/2} + 2^{(n-2)/2}         \\ 
-     &amp;= 2 \times 2^{(n/2)-1}\\
-     &amp;= 2^{n/2}
-\end{align*}
-</div>
-</div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14578,7 +14468,7 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 피보나찌 수 구하기 알고리즘 (반복)</span>
@@ -14602,10 +14492,43 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14624,7 +14547,7 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>8</pre>
 </div>
 
 </div>
@@ -14638,7 +14561,7 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14657,39 +14580,6 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>8</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
 <pre>55</pre>
 </div>
 
@@ -14701,7 +14591,7 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fib2</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
@@ -14717,7 +14607,7 @@ T(n) &amp;= T(n-1) + T(n-2) + 1              \\
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -15171,7 +15061,7 @@ $$B(n) \le A(n) \le W(n)$$
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 리스트의 항목 모두 더하기</span>
@@ -15191,7 +15081,7 @@ $$B(n) \le A(n) \le W(n)$$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
@@ -15209,7 +15099,7 @@ $$B(n) \le A(n) \le W(n)$$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -15264,7 +15154,7 @@ $$B(n) \le A(n) \le W(n)$$
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 교환정렬</span>
@@ -15283,7 +15173,7 @@ $$B(n) \le A(n) \le W(n)$$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -15340,9 +15230,8 @@ $$B(n) \le A(n) \le W(n)$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>조건문의 총 실행횟수<ul>
-<li>$i=1$인 경우: $(n-1)$ 번</li>
-<li>$i=2$인 경우: $(n-2)$ 번</li>
-<li>$i=3$인 경우: $(n-3)$ 번</li>
+<li>$i=1$인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-1)$ 번</li>
+<li>$i=2$인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-2)$ 번</li>
 <li>...</li>
 <li>$i=(n-1)$인 경우: $1$ 번</li>
 </ul>
@@ -15374,7 +15263,7 @@ $$T(n) = (n-1) + (n-2) + \cdots + 1 = \frac{(n-1)n}{2}$$
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 교환정렬</span>
@@ -15396,7 +15285,7 @@ $$T(n) = (n-1) + (n-2) + \cdots + 1 = \frac{(n-1)n}{2}$$
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -15562,7 +15451,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15574,7 +15463,7 @@ A(n) &amp;= \sum_{k=1}^{n} \Big( k \times \frac{1}{n} \Big) \\
 \end{align*}
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15594,7 +15483,7 @@ A(n) &amp;= \sum_{k=1}^{n} \Big( k \times \frac{1}{n} \Big) \\
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15605,7 +15494,7 @@ A(n) &amp; = \sum_{k=1}^{n} \Big(k\times \frac{p}{n} \Big) + n\, (1-p) \\
 \end{align*}
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15615,7 +15504,7 @@ A(n) &amp; = \sum_{k=1}^{n} \Big(k\times \frac{p}{n} \Big) + n\, (1-p) \\
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15676,7 +15565,7 @@ A(n) &amp; = \sum_{k=1}^{n} \Big(k\times \frac{p}{n} \Big) + n\, (1-p) \\
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 교환정렬</span>
@@ -15698,7 +15587,7 @@ A(n) &amp; = \sum_{k=1}^{n} \Big(k\times \frac{p}{n} \Big) + n\, (1-p) \\
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -15794,7 +15683,7 @@ f(n) &amp;= 3n^2 + 4n^2
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15808,7 +15697,7 @@ f(n) &amp;= 3n^2 + 4n^2
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15851,7 +15740,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15865,7 +15754,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15883,11 +15772,11 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&quot;&#44417;&#44537;&#51201;&#51004;&#47196;-&#45908;-&#48736;&#47492;&quot;">"&#44417;&#44537;&#51201;&#51004;&#47196; &#45908; &#48736;&#47492;"<a class="anchor-link" href="#&quot;&#44417;&#44537;&#51201;&#51004;&#47196;-&#45908;-&#48736;&#47492;&quot;">&#182;</a></h3><ul>
-<li><p>'$n&gt;10,000$인 임의의 양의 정수 $n$에 대해 $0.01 n^2$이 $100 n$ 보다 크다'를 다르게 표현하면 다음과 같음.
-  <br></p>
-<p>&lt;div style="text-align:center";&gt;<span style="color:red;">$0.01 n^2$이 $100 n$ 보다 궁극적으로 크다</span>&lt;/div&gt;</p>
-</li>
+<li>'$n&gt;10,000$인 임의의 양의 정수 $n$에 대해 $0.01 n^2$이 $100 n$ 보다 크다'를 다르게 표현하면 다음과 같음.
+  <br>
+  <br></li>
 </ul>
+<p>&lt;div style="text-align:center";&gt;<span style="color:red;">$0.01 n^2$이 $100 n$ 보다 궁극적으로 크다</span>&lt;/div&gt;</p>
 
 </div>
 </div>
@@ -15896,12 +15785,12 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>다음 성질을 갖는 정수 $N \ge 0$이 존재할 때
+<li>다음 성질을 갖는 정수 $N \ge 0$이 존재할 때
   <span style="color:red;">$f(n)$이 $g(n)$ 보다 궁극적으로 크다</span>고 말함:
-  <br></p>
-<p>&lt;div style="text-align:center";&gt;$n&gt;N$인 임의의 양의 정수 $n$에 대해 $f(n) &gt; g(n)$ &lt;/div&gt;</p>
-</li>
+  <br>
+  <br></li>
 </ul>
+<p>&lt;div style="text-align:center";&gt;$n&gt;N$인 임의의 양의 정수 $n$에 대해 $f(n) &gt; g(n)$ &lt;/div&gt;</p>
 
 </div>
 </div>
@@ -15922,14 +15811,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52264;&#49688;($\Theta$,-&#50052;&#53440;)&#51032;-&#51649;&#44288;&#51201;-&#51060;&#54644;">&#52264;&#49688;($\Theta$, &#50052;&#53440;)&#51032; &#51649;&#44288;&#51201; &#51060;&#54644;<a class="anchor-link" href="#&#52264;&#49688;($\Theta$,-&#50052;&#53440;)&#51032;-&#51649;&#44288;&#51201;-&#51060;&#54644;">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h3 id="&#52264;&#49688;($\Theta$,-&#50052;&#53440;)&#51032;-&#51649;&#44288;&#51201;-&#51060;&#54644;">&#52264;&#49688;($\Theta$, &#50052;&#53440;)&#51032; &#51649;&#44288;&#51201; &#51060;&#54644;<a class="anchor-link" href="#&#52264;&#49688;($\Theta$,-&#50052;&#53440;)&#51032;-&#51649;&#44288;&#51201;-&#51060;&#54644;">&#182;</a></h3><ul>
 <li>$\Theta(n)$: 1차 시간 복잡도<ul>
 <li>$100 n$</li>
 <li>$0.001 n + 10000$</li>
@@ -15940,7 +15822,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15955,7 +15837,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15970,7 +15852,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16029,14 +15911,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#47588;&#50864;-&#54952;&#50984;&#51201;&#51064;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#47588;&#50864; &#54952;&#50984;&#51201;&#51064; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#47588;&#50864;-&#54952;&#50984;&#51201;&#51064;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#47588;&#50864;-&#54952;&#50984;&#51201;&#51064;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#47588;&#50864; &#54952;&#50984;&#51201;&#51064; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#47588;&#50864;-&#54952;&#50984;&#51201;&#51064;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4><ul>
 <li>$\Theta(1)$: 상수 복잡도<ul>
 <li>0</li>
 <li>1</li>
@@ -16048,7 +15923,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16066,7 +15941,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16084,7 +15959,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16102,18 +15977,11 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#44221;&#50864;&#50640;-&#46384;&#46972;-&#44316;&#52270;&#51008;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#44221;&#50864;&#50640; &#46384;&#46972; &#44316;&#52270;&#51008; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#44221;&#50864;&#50640;-&#46384;&#46972;-&#44316;&#52270;&#51008;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#44221;&#50864;&#50640;-&#46384;&#46972;-&#44316;&#52270;&#51008;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#44221;&#50864;&#50640; &#46384;&#46972; &#44316;&#52270;&#51008; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#44221;&#50864;&#50640;-&#46384;&#46972;-&#44316;&#52270;&#51008;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4><ul>
 <li><p>$\Theta(n^2)$: 2차 복잡도
    <br></p>
 <ul>
@@ -16127,7 +15995,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16145,18 +16013,11 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#49324;&#49892;&#49345;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#49324;&#49892;&#49345; &#49324;&#50857;&#54624; &#49688; &#50630;&#45716; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#49324;&#49892;&#49345;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#49324;&#49892;&#49345;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#49324;&#49892;&#49345; &#49324;&#50857;&#54624; &#49688; &#50630;&#45716; &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020; &#50696;&#51228;<a class="anchor-link" href="#&#49324;&#49892;&#49345;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;-&#50696;&#51228;">&#182;</a></h4><ul>
 <li><p>$\Theta(2^n)$: 지수 복잡도
    <br></p>
 <ul>
@@ -16170,7 +16031,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16188,12 +16049,12 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#48373;&#51105;&#46020;-&#54632;&#49688;&#51032;-&#51613;&#44032;&#50984;">&#48373;&#51105;&#46020; &#54632;&#49688;&#51032; &#51613;&#44032;&#50984;<a class="anchor-link" href="#&#48373;&#51105;&#46020;-&#54632;&#49688;&#51032;-&#51613;&#44032;&#50984;">&#182;</a></h4><p><br></p>
-<div align="center"><img src="images/algo01-06.png" width="500"/></div>
+<div align="center"><img src="images/algo01-06.png" width="400"/></div>
 </div>
 </div>
 </div></section><section>
@@ -16201,17 +16062,17 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#49884;&#44036;&#48373;&#51105;&#46020;&#48324;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#49884;&#44036;&#48373;&#51105;&#46020;&#48324; &#49892;&#54665;&#49884;&#44036; &#48708;&#44368;<a class="anchor-link" href="#&#49884;&#44036;&#48373;&#51105;&#46020;&#48324;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#182;</a></h4><ul>
-<li>가정: 단위연산 실행시간 = 1 ns</li>
+<li>가정: 단위연산 실행시간 = 1 ns 원서 오류 주의: <span style="color:red;">$0.230$</span> 초 (추정치)</li>
 </ul>
 <table>
 <thead><tr>
 <th style="text-align:right"><div style="width:50px">$n$</div></th>
-<th style="text-align:right"><div style="width:100px">$\lg n$</div></th>
-<th style="text-align:right"><div style="width:130px">$n$</div></th>
-<th style="text-align:right"><div style="width:130px">$n\, \lg n$</div></th>
-<th style="text-align:right"><div style="width:130px">$n^2$</div></th>
-<th style="text-align:right"><div style="width:130px">$n^3$</div></th>
-<th style="text-align:right"><div style="width:130px">$2^n$</div></th>
+<th style="text-align:right"><div style="width:80px">$\lg n$</div></th>
+<th style="text-align:right"><div style="width:100px">$n$</div></th>
+<th style="text-align:right"><div style="width:100px">$n\, \lg n$</div></th>
+<th style="text-align:right"><div style="width:100px">$n^2$</div></th>
+<th style="text-align:right"><div style="width:100px">$n^3$</div></th>
+<th style="text-align:right"><div style="width:100px">$2^n$</div></th>
 </tr>
 </thead>
 <tbody>
@@ -16330,12 +16191,10 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <td style="text-align:right">$29.900$ 초</td>
 <td style="text-align:right">$31.70$ 년</td>
 <td style="text-align:right"></td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>원서 오류 주의: <span style="color:red;">$0.230$</span> 초 (추정치)</li>
-</ul>
 
 </div>
 </div>
@@ -16361,11 +16220,10 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="'&#53360;-$O$'-&#54364;&#44592;&#48277;">'&#53360; $O$' &#54364;&#44592;&#48277;<a class="anchor-link" href="#'&#53360;-$O$'-&#54364;&#44592;&#48277;">&#182;</a></h3><ul>
-<li><p>다음 성질을 갖는 양의 실수 $c$와 음이 아닌 정수 $N$이 존재할 때 $g(n)\in O(f(n))$ 성립: 
-  <br></p>
-<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $g(n) \le c\cdot f(n)$&lt;/div&gt;</p>
-</li>
+<li>다음 성질을 갖는 양의 실수 $c$와 음이 아닌 정수 $N$이 존재할 때 $g(n)\in O(f(n))$ 성립: 
+  <br></li>
 </ul>
+<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $g(n) \le c\cdot f(n)$&lt;/div&gt;</p>
 
 </div>
 </div>
@@ -16445,7 +16303,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16459,7 +16317,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16473,7 +16331,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16487,7 +16345,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16501,7 +16359,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16511,16 +16369,16 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div align="center"><img src="images/algo01-10.png" width="400"/></div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="$\Omega$-&#54364;&#44592;&#48277;">$\Omega$ &#54364;&#44592;&#48277;<a class="anchor-link" href="#$\Omega$-&#54364;&#44592;&#48277;">&#182;</a></h3><ul>
-<li><p>다음 성질을 갖는 양의 실수 $c$와 음이 아닌 정수 $N$이 존재할 때 $g(n)\in \Omega(f(n))$ 성립: 
-  <br></p>
-<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $g(n) \ge c\cdot f(n)$&lt;/div&gt;</p>
-</li>
+<li>다음 성질을 갖는 양의 실수 $c$와 음이 아닌 정수 $N$이 존재할 때 $g(n)\in \Omega(f(n))$ 성립: 
+  <br>
+  <br></li>
 </ul>
+<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $g(n) \ge c\cdot f(n)$&lt;/div&gt;</p>
 
 </div>
 </div>
@@ -16559,14 +16417,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="$\Omega$-&#54364;&#44592;&#48277;-&#50696;&#51228;">$\Omega$ &#54364;&#44592;&#48277; &#50696;&#51228;<a class="anchor-link" href="#$\Omega$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="$\Omega$-&#54364;&#44592;&#48277;-&#50696;&#51228;">$\Omega$ &#54364;&#44592;&#48277; &#50696;&#51228;<a class="anchor-link" href="#$\Omega$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#182;</a></h4><ul>
 <li>$n^2 + 10n \in \Omega(n^2)$<ul>
 <li>$n \ge 0$인 경우: $n^2+10n \ge n^2$</li>
 <li>그러므로 $c = 1$과 $N = 0$ 선택</li>
@@ -16576,7 +16427,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16590,7 +16441,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16605,7 +16456,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16620,7 +16471,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16634,7 +16485,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16644,33 +16495,21 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div align="center"><img src="images/algo01-12.png" width="400"/></div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="$\Theta$-&#54364;&#44592;&#48277;">$\Theta$ &#54364;&#44592;&#48277;<a class="anchor-link" href="#$\Theta$-&#54364;&#44592;&#48277;">&#182;</a></h3><ul>
-<li>$\Theta(f(n)) = O(f(n)) \cap \Omega(f(n))$.</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>즉, 다음 성질을 갖는 양의 실수 $c$와 $d$, 그리고 음이 아닌 정수 $N$이 존재할 때 $g(n)\in \Theta(f(n))$ 성립: 
+<li><p>$\Theta(f(n)) = O(f(n)) \cap \Omega(f(n))$.
   <br></p>
-<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $c\cdot f(n) \le g(n) \le d\cdot f(n)$&lt;/div&gt;</p>
+</li>
+<li><p>즉, 다음 성질을 갖는 양의 실수 $c$와 $d$, 그리고 음이 아닌 정수 $N$이 존재할 때 $g(n)\in \Theta(f(n))$ 성립: 
+  <br>
+  <br></p>
 </li>
 </ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>&lt;div style="text-align:center";&gt;$n \ge N$인 임의의 정수 $n$에 대해 $c\cdot f(n) \le g(n) \le d\cdot f(n)$&lt;/div&gt;
+    <br></p>
 <ul>
 <li>$g(n) \in \Theta(f(n))$ 읽는 방법:<ul>
 <li>$g(n)$의 $f(n)$의 <strong>차수</strong>이다.</li>
@@ -16680,14 +16519,14 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align="center"><img src="images/algo01-13.png" width="400"/></div>
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16702,14 +16541,14 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align="center"><img src="images/algo01-14.png" width="400"/></div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16767,14 +16606,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#51089;&#51008;-$o$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#51089;&#51008; $o$ &#54364;&#44592;&#48277; &#50696;&#51228;<a class="anchor-link" href="#&#51089;&#51008;-$o$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#51089;&#51008;-$o$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#51089;&#51008; $o$ &#54364;&#44592;&#48277; &#50696;&#51228;<a class="anchor-link" href="#&#51089;&#51008;-$o$-&#54364;&#44592;&#48277;-&#50696;&#51228;">&#182;</a></h4><ul>
 <li>$n \in o(n^2)$<ul>
 <li>$c &gt; 0$가 주어졌을 때, $n \ge 1/c$인 모든 $n$에 대해 $n \le c\cdot n^2$ 성립.</li>
 </ul>
@@ -16783,7 +16615,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16796,7 +16628,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16809,7 +16641,7 @@ n^2 &gt; 1000n\quad &amp;\Longleftrightarrow \quad n &gt; 1000
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16824,7 +16656,7 @@ $$<ul>
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16847,24 +16679,17 @@ n &amp; \text{if }n \%2 = 0 \\
 $$
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52264;&#49688;&#51032;-&#53945;&#49457;">&#52264;&#49688;&#51032; &#53945;&#49457;<a class="anchor-link" href="#&#52264;&#49688;&#51032;-&#53945;&#49457;">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h3 id="&#52264;&#49688;&#51032;-&#53945;&#49457;">&#52264;&#49688;&#51032; &#53945;&#49457;<a class="anchor-link" href="#&#52264;&#49688;&#51032;-&#53945;&#49457;">&#182;</a></h3><ul>
 <li>$g(n) \in O(f(n)) \quad\Longleftrightarrow\quad f(n) \in \Omega(g(n))$</li>
 </ul>
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16919,7 +16744,7 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><p>많이 언급되는 복잡도 카테고리를 순서대로 나열하면 다음과 같음:</p>
-<p>$$\Theta(\lg n)\quad \Theta(n)\quad \Theta(n\, \lg n)\quad \Theta(n^2)\quad \Theta(n^j)\quad \Theta(n^k)\quad \Theta(a^n)\quad \Theta(b^n)\quad \Theta(n!)$$</p>
+<p>$$\Theta(\lg n)\;\; \Theta(n)\;\; \Theta(n\, \lg n)\;\; \Theta(n^2)\;\; \Theta(n^j)\;\; \Theta(n^k)\;\; \Theta(a^n)\;\; \Theta(b^n)\;\; \Theta(n!)$$</p>
 <ul>
 <li>단, $k &gt; j &gt; 2$이고 $b &gt; a &gt; 1$임.</li>
 <li><p>$g(n)$이 $f(n)$의 카테고리 보다 왼편에 위치한 카테고리에 속한 경우 다음 성립:</p>
@@ -16947,14 +16772,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><ul>
 <li><p>$\Theta(\log_4 n) \in \Theta(\lg n)$</p>
 </li>
 <li><p>$\lg n \in o(n)$</p>
@@ -16963,6 +16781,15 @@ $$
 </li>
 <li><p>$2^n \in o(n!)$</p>
 </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>$7 n^2 \in \Theta(n^2)$</p>
 </li>
 <li><p>$10 n\, \lg n + 7 n^2 \in \Theta(n^2)$</p>
@@ -16975,7 +16802,7 @@ $$
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -16987,7 +16814,9 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#51221;&#47532;">&#51221;&#47532;<a class="anchor-link" href="#&#51221;&#47532;">&#182;</a></h4><ul>
-<li>$\lim_{n\to \infty} \frac{g(n)}{f(n)}$의 값이<ul>
+<li><p>$\lim_{n\to \infty} \frac{g(n)}{f(n)}$의 값이
+  <br></p>
+<ul>
 <li>만약 $c &gt; 0$이면, $g(n) \in \Theta(f(n))$,</li>
 <li>만약 $0$ 이면, $g(n) \in o(f(n))$,</li>
 <li>만약 $\infty$, 즉, 발산하면,  $f(n) \in o(g(n))$.</li>
@@ -17001,20 +16830,13 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><ul>
 <li>$\frac{n^2}{2} \in o(n^3)$:</li>
 </ul>
 $$\lim_{n\to \infty} \frac{n^2/2}{n^3} = \lim_{n\to \infty} \frac{1}{2n} = 0$$
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17024,7 +16846,7 @@ $$\lim_{n\to \infty} \frac{n^2/2}{n^3} = \lim_{n\to \infty} \frac{1}{2n} = 0$$
 $$\lim_{n\to \infty} \frac{a^n}{b^n} = \lim_{n\to \infty} \Big( \frac{a}{b}\Big)^n = 0$$
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17038,7 +16860,7 @@ $$\lim_{n\to \infty} \frac{a^n}{b^n} = \lim_{n\to \infty} \Big( \frac{a}{b}\Big)
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17052,14 +16874,7 @@ $$\lim_{n\to \infty} \frac{g(n)}{f(n)} = \lim_{n\to \infty} \frac{g'(n)}{f'(n)}$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><ul>
 <li>$\lg n \in o(n)$:</li>
 </ul>
 $$
@@ -17068,7 +16883,7 @@ $$
 $$
 </div>
 </div>
-</div></div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -17084,7 +16899,7 @@ $$
 
 </div>
 </div>
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 
