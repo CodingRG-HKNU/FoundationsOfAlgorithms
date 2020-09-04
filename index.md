@@ -4,17 +4,17 @@
 
 * 1장 알고리즘: 효율성, 분석, 차수
     * 1절 알고리즘 &nbsp;
-        [[html]](./Algo-01-AlgorithmsIntro-1.slides.html) &nbsp;
-        [[pdf]](./Algo-01-AlgorithmsIntro-1-slides.pdf)
+        [[html]](./slides/Algo-01-AlgorithmsIntro-1.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-01-AlgorithmsIntro-1-slides.pdf)
     * 2절 효율적 알고리즘 개발 중요성
-        [[html]](./Algo-01-AlgorithmsIntro-2.slides.html) &nbsp;
-        [[pdf]](./Algo-01-AlgorithmsIntro-2-slides.pdf)
+        [[html]](./slides/Algo-01-AlgorithmsIntro-2.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-01-AlgorithmsIntro-2-slides.pdf)
     * 3절 알고리즘 분석
-        [[html]](./Algo-01-AlgorithmsIntro-3.slides.html) &nbsp;
-        [[pdf]](./Algo-01-AlgorithmsIntro-3-slides.pdf)
+        [[html]](./slides/Algo-01-AlgorithmsIntro-3.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-01-AlgorithmsIntro-3-slides.pdf)
     * 4절 차수
-        [[html]](./Algo-01-AlgorithmsIntro-4.slides.html) &nbsp;
-        [[pdf]](./Algo-01-AlgorithmsIntro-4-slides.pdf)
+        [[html]](./slides/Algo-01-AlgorithmsIntro-4.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-01-AlgorithmsIntro-4-slides.pdf)
 * ...
 
 *주의: HTML을 이용하여 슬라이드를 사용할 경우 전진과 후진을 `space`와 `shift+space` 키를 활용할 것.*
