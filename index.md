@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+알고리즘 기초(Foundations of Algorighms, Neapolitan 저) 강의 슬라이드 제공
 
-You can use the [editor on GitHub](https://github.com/CodingRG-HKNU/FoundationsOfAlgorithms/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+### 슬라이드 목차
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. 알고리즘: 효율성, 분석, 차수
+    * 1절 알고리즘 &nbsp;
+        [[html]](./Algo-01-AlgorithmsIntro-1.slides.html) &nbsp;
+        [[pdf]](./Algo-01-AlgorithmsIntro-1-slides.pdf)
+    * 2절 효율적 알고리즘 개발 중요성
+        [[html]](./Algo-01-AlgorithmsIntro-2.slides.html) &nbsp;
+        [[pdf]](./Algo-01-AlgorithmsIntro-2-slides.pdf)
+    * 3절 알고리즘 분석
+        [[html]](./Algo-01-AlgorithmsIntro-3.slides.html) &nbsp;
+        [[pdf]](./Algo-01-AlgorithmsIntro-3-slides.pdf)
+    * 4절 차수
+        [[html]](./Algo-01-AlgorithmsIntro-4.slides.html) &nbsp;
+        [[pdf]](./Algo-01-AlgorithmsIntro-4-slides.pdf)
+- ...
 
-### Markdown
+*주의: HTML을 이용하여 슬라이드를 사용할 경우 전진과 후진을 `space`와 `shift+space` 키를 활용할 것.*
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### 강의에 사용되는 언어: 파이썬 3
 
-```markdown
-Syntax highlighted code block
+* 설치: 아나콘다(Anaconda) 패키지 설치 추천
+* 파이썬은 기본패키지만 사용
+* 주피터 노트북 활용. [GitHub: FoundationsofAogorithms](https://github.com/CodingRG-HKNU/FoundationsOfAlgorithms) 참조.
 
-# Header 1
-## Header 2
-### Header 3
+---
 
-- Bulleted
-- List
+#### 깃허브 마크다운 사용법 
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CodingRG-HKNU/FoundationsOfAlgorithms/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+깃허브에서 사용되는 마크다운에 자세한 안내는 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) 참조.
