@@ -13801,13 +13801,15 @@ $$15 = \frac{6\cdot 5}{2}$$
 <h3 id="&#50696;&#51228;:-&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#50696;&#51228;: &#52572;&#50501; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#50696;&#51228;:-&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$W(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#44368;&#54872;&#51221;&#47148; &#50508;&#44256;&#47532;&#51608;&#51032; $W(n)$ &#44396;&#54616;&#44592; : &#44368;&#54872; &#44592;&#51456;<a class="anchor-link" href="#&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$W(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#182;</a></h4><ul>
-<li>단위연산: 교환하는 연산 (<code>S[i]</code>와 <code>S[j]</code>의 교환)</li>
-<li>입력크기: 정렬할 항목의 수 $n$</li>
+<li><p>단위연산: 교환하는 연산 (<code>S[i]</code>와 <code>S[j]</code>의 교환)</p>
+</li>
+<li><p>입력크기: 정렬할 항목의 수 $n$</p>
+</li>
 </ul>
 
 </div>
@@ -13884,7 +13886,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 <h3 id="&#50696;&#51228;:-&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#50696;&#51228;: &#54217;&#44512; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#50696;&#51228;:-&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13902,26 +13904,29 @@ $$15 = \frac{6\cdot 5}{2}$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>경우 1</p>
-<ul>
-<li><p>가정</p>
-<ul>
+<h5 id="&#44221;&#50864;-1">&#44221;&#50864; 1<a class="anchor-link" href="#&#44221;&#50864;-1">&#182;</a></h5><ul>
+<li>가정<ul>
 <li><code>x</code>가 리스트 <code>S</code>안에 있음</li>
 <li>리스트의 항목이 모두 다름.</li>
 <li><code>x</code>가 리스트의 특정 위치에 있을 확률 동일, 즉 $1/n$. 단, $n$은 리스트 <code>S</code>의 길이.</li>
-</ul>
-</li>
-<li><p><code>x</code>가 리스트의 $k$ 번째 있다면, 
-  <code>S</code>를 찾기 위해서 수행하는 단위연산의 횟수는 $k$.</p>
-</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>x</code>가 리스트의 $k$ 번째 있다면, 
+  <code>S</code>를 찾기 위해서 수행하는 단위연산의 횟수는 $k$.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13937,23 +13942,37 @@ A(n) &amp;= \sum_{k=1}^{n} \Big( k \times \frac{1}{n} \Big) \\
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>경우 2</p>
-<ul>
+<h5 id="&#44221;&#50864;-2">&#44221;&#50864; 2<a class="anchor-link" href="#&#44221;&#50864;-2">&#182;</a></h5><ul>
 <li>가정<ul>
 <li><code>x</code>가 리스트 <code>S</code> 안에 없을 수도 있음.</li>
 <li><code>x</code>가 리스트 <code>S</code> 안에 있을 확률: $p$</li>
-</ul>
-</li>
-<li><code>x</code>가 배열에 없을 확률: $1-p$</li>
-<li><code>x</code>가 리스트의 $k$ 번째 항목일 확률: $p/n$</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>x</code>가 배열에 없을 확률: $1-p$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>x</code>가 리스트의 $k$ 번째 항목일 확률: $p/n$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13988,14 +14007,7 @@ $$A(n) = \frac{3n+1}{4}$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#50696;&#51228;:-&#52572;&#49440;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#50696;&#51228;: &#52572;&#49440; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#50696;&#51228;:-&#52572;&#49440;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$B(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#44368;&#54872;&#51221;&#47148; &#50508;&#44256;&#47532;&#51608;&#51032; $B(n)$ &#44396;&#54616;&#44592; : &#44368;&#54872; &#44592;&#51456;<a class="anchor-link" href="#&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$B(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#182;</a></h4><ul>
+<h3 id="&#50696;&#51228;:-&#52572;&#49440;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#50696;&#51228;: &#52572;&#49440; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#50696;&#51228;:-&#52572;&#49440;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3><h4 id="&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$B(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#44368;&#54872;&#51221;&#47148; &#50508;&#44256;&#47532;&#51608;&#51032; $B(n)$ &#44396;&#54616;&#44592; : &#44368;&#54872; &#44592;&#51456;<a class="anchor-link" href="#&#44368;&#54872;&#51221;&#47148;-&#50508;&#44256;&#47532;&#51608;&#51032;-$B(n)$-&#44396;&#54616;&#44592;-:-&#44368;&#54872;-&#44592;&#51456;">&#182;</a></h4><ul>
 <li>단위연산: 교환하는 연산 (<code>S[i]</code>와 <code>S[j]</code>의 교환)</li>
 <li>입력크기: 정렬할 항목의 수 $n$</li>
 </ul>
@@ -14188,7 +14200,14 @@ $$A(n) = \frac{3n+1}{4}$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#48373;&#51105;&#46020;-&#54632;&#49688;&#50752;-&#49892;&#54665;&#49884;&#44036;">&#48373;&#51105;&#46020; &#54632;&#49688;&#50752; &#49892;&#54665;&#49884;&#44036;<a class="anchor-link" href="#&#48373;&#51105;&#46020;-&#54632;&#49688;&#50752;-&#49892;&#54665;&#49884;&#44036;">&#182;</a></h3><h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><ul>
+<h3 id="&#48373;&#51105;&#46020;-&#54632;&#49688;&#50752;-&#49892;&#54665;&#49884;&#44036;">&#48373;&#51105;&#46020; &#54632;&#49688;&#50752; &#49892;&#54665;&#49884;&#44036;<a class="anchor-link" href="#&#48373;&#51105;&#46020;-&#54632;&#49688;&#50752;-&#49892;&#54665;&#49884;&#44036;">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4><ul>
 <li>아래 두 알고리즘 중에서 어떤 알고리즘 선택? <ul>
 <li>알고리즘 A의 시간복잡도: $1000n$</li>
 <li>알고리즘 B의 시간복잡도: $n^2$</li>
