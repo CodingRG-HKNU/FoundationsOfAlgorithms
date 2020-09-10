@@ -13482,7 +13482,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#49884;&#44036;&#48373;&#51105;&#46020;&#48324;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#49884;&#44036;&#48373;&#51105;&#46020;&#48324; &#49892;&#54665;&#49884;&#44036; &#48708;&#44368;<a class="anchor-link" href="#&#49884;&#44036;&#48373;&#51105;&#46020;&#48324;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#182;</a></h3><ul>
-<li>가정: 단위연산 실행시간 = 1 ns (원서 오류 주의: <span style="color:red;">약 $0.230$</span> 초)</li>
+<li>가정: 단위연산 실행시간 = 1 ns</li>
 </ul>
 <table>
 <thead><tr>
@@ -13632,10 +13632,12 @@ a.anchor-link {
 <td style="text-align:right">$29.900$ 초</td>
 <td style="text-align:right">$31.70$ 년</td>
 <td style="text-align:right"></td>
-<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>원서 오류 주의: <span style="color:red;">약 $0.230$</span> 초</li>
+</ul>
 
 </div>
 </div>
@@ -13748,8 +13750,8 @@ $$n^2+10n \le 2n^2$$</p>
 <li><p>$5n^2 \in O(n^2)$
   <br></p>
 <ul>
-<li><p>$n\ge 0$인 경우: 
-  $$5n^2 \le 5n^2$$</p>
+<li><p>$n\ge 0$인 경우:</p>
+<p>$$5n^2 \le 5n^2$$</p>
 </li>
 <li><p>그러므로 $c=5$와 $N=0$ 선택</p>
 </li>
@@ -13767,8 +13769,8 @@ $$n^2+10n \le 2n^2$$</p>
 <li><p>$\frac{n(n-1)}{2} \in O(n^2)$
   <br></p>
 <ul>
-<li><p>$n \ge 0$인 경우: 
-  $$n(n-1)/2 \le \frac{n^2}{2}$$</p>
+<li><p>$n \ge 0$인 경우:</p>
+<p>$$n(n-1)/2 \le \frac{n^2}{2}$$</p>
 </li>
 <li><p>그러므로 $c = 1/2$과 $N=0$ 선택</p>
 </li>
@@ -13805,8 +13807,8 @@ $$n^2+10n \le 2n^2$$</p>
 <li><p>$n \in O(n^2)$
   <br></p>
 <ul>
-<li><p>$n \ge 1$인 경우: 
-  $$n \le 1 \times n^2$$</p>
+<li><p>$n \ge 1$인 경우:</p>
+<p>$$n \le 1 \times n^2$$</p>
 </li>
 <li><p>그러므로 $c=1$과 $N=1$ 선택</p>
 </li>
@@ -13963,8 +13965,8 @@ $$n^2+10n \le 2n^2$$</p>
 <li><p>$n^3 \in \Omega(n^2)$
 <br></p>
 <ul>
-<li><p>$n \ge 1$인 경우: $n^3 \ge 1 \cdot n^2$
-<br></p>
+<li><p>$n \ge 1$인 경우:</p>
+<p>$$n^3 \ge 1 \cdot n^2$$</p>
 </li>
 <li><p>그러므로, $c = 1$과 $N = 1$ 선택</p>
 </li>
@@ -14159,7 +14161,7 @@ $$\Theta(f(n)) = O(f(n)) \cap \Omega(f(n))$$
 <li><p>$n \in o(n^2)$
 <br></p>
 <ul>
-<li>$c &gt; 0$가 주어졌을 때, $n \ge 1/c$인 모든 $n$에 대해 $n \le c\cdot n^2$ 성립.</li>
+<li>$c &gt; 0$가 주어졌을 때, $n \ge 1/c$ 인 모든 $n$에 대해 $n \le c\cdot n^2$ 성립.</li>
 </ul>
 </li>
 </ul>
@@ -14206,8 +14208,8 @@ $$\Theta(f(n)) = O(f(n)) \cap \Omega(f(n))$$
 <li><p>가정:</p>
 <p>$$g(n) \in o(f(n))$$</p>
 </li>
-<li><p>다음 성립:
-  $$
+<li><p>다음 성립:</p>
+<p>$$
   g(n) \in O(f(n)) - \Omega(f(n))
   $$</p>
 </li>
