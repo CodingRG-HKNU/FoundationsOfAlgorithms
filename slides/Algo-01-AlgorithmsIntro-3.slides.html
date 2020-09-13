@@ -13205,7 +13205,7 @@ a.anchor-link {
 <h2 id="3&#51208;-&#50508;&#44256;&#47532;&#51608;-&#48516;&#49437;">3&#51208; &#50508;&#44256;&#47532;&#51608; &#48516;&#49437;<a class="anchor-link" href="#3&#51208;-&#50508;&#44256;&#47532;&#51608;-&#48516;&#49437;">&#182;</a></h2>
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13240,7 +13240,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13293,7 +13293,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13303,7 +13303,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13313,7 +13313,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13631,7 +13631,7 @@ $$B(n) \le A(n) \le W(n)$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13658,7 +13658,7 @@ $$B(n) \le A(n) \le W(n)$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -13737,10 +13737,10 @@ $$B(n) \le A(n) \le W(n)$$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>조건문의 총 실행횟수<ul>
-<li>$i=1$인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-1)$ 번</li>
-<li>$i=2$인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-2)$ 번</li>
+<li>$i=0$ 인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-1)$ 번</li>
+<li>$i=1$ 인 경우:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(n-2)$ 번</li>
 <li>...</li>
-<li>$i=(n-1)$인 경우: $1$ 번</li>
+<li>$i=(n-1)$ 인 경우: $1$ 번</li>
 </ul>
 </li>
 </ul>
@@ -13866,7 +13866,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13876,8 +13876,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 <li>조건문의 결과에 따라서 교환 연산의 실행여부 결정</li>
 <li><p>최악의 경우</p>
 <ul>
-<li>조건문이 항상 참(true)인 경우</li>
-<li>즉, 입력 배열이 거꾸로 정렬되어 있는 경우</li>
+<li>조건문이 항상 참(true)인 경우. 즉, 입력 배열이 거꾸로 정렬되어 있는 경우</li>
 <li><p>이때, 조건문 실행 횟수와 동일하게 실행됨. 즉, 일정 시간복잡도와 동일.</p>
 <p>$$W(n) = \frac{(n-1)n}{2}$$</p>
 </li>
@@ -13885,6 +13884,17 @@ $$15 = \frac{6\cdot 5}{2}$$
 </li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="http://www.pythontutor.com/visualize.html#code=def%20exchangesort_2%28S%29%3A%0A%20%20%20%20count%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28i%2B1,%20len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28S%5Bj%5D%20%3C%20S%5Bi%5D%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%20%2B%3D%201%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20S%5Bi%5D,%20S%5Bj%5D%20%3D%20S%5Bj%5D,%20S%5Bi%5D%0A%20%20%20%20return%20count%0A%20%20%20%20%0A%0Aseq%20%3D%20%5B7,%205,%204,%203,%202,%201%5D%0Aprint%28exchangesort_2%28seq%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 교환정렬 최악 시간 복잡도</a>
+  확인</li>
 </ul>
 
 </div>
@@ -13903,7 +13913,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13978,7 +13988,7 @@ $$15 = \frac{6\cdot 5}{2}$$
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13987,6 +13997,20 @@ A(n) &amp;= \sum_{k=1}^{n} \Big( k \times \frac{1}{n} \Big) \\
     &amp;= \frac{1}{n} \times \sum_{k=1}^{n} k \\
     &amp;= \frac{1}{n} \times \frac{n(n+1)}{2} \\
     &amp;= \frac{n+1}{2}
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>주의: $k$를 파이썬 리스트의 인덱스를 기준으로 사용한다면 $A(n)$은 다음과 같지만, 결과는 동일하다.</li>
+</ul>
+\begin{align*}
+A(n) &amp;= \sum_{k=0}^{n-1} \Big( (k+1) \times \frac{1}{n} \Big) \\
+    &amp;= \frac{1}{n} \times \sum_{k=0}^{n-1} (k+1) = \frac{1}{n} \times \sum_{k=1}^{n} k \\
+    &amp;= \frac{1}{n} \times \frac{n(n+1)}{2} = \frac{n+1}{2}
 \end{align*}
 </div>
 </div>
@@ -14024,7 +14048,7 @@ A(n) &amp;= \sum_{k=1}^{n} \Big( k \times \frac{1}{n} \Big) \\
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14066,7 +14090,7 @@ $$A(n) = \frac{3n+1}{4}$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14159,7 +14183,7 @@ $$A(n) = \frac{3n+1}{4}$$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="http://www.pythontutor.com/visualize.html#code=def%20exchangesort_2%28S%29%3A%0A%20%20%20%20count%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28i%2B1,%20len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28S%5Bj%5D%20%3C%20S%5Bi%5D%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%20%2B%3D%201%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20S%5Bi%5D,%20S%5Bj%5D%20%3D%20S%5Bj%5D,%20S%5Bi%5D%0A%20%20%20%20return%20count%0A%20%20%20%20%0A%0Aseq1%20%3D%20%5B7,%205,%204,%204,%202,%201%5D%0Aprint%28exchangesort_2%28seq1%29%29%0A%0Aseq2%20%3D%20%5B1,%202,%204,%204,%205,%207%5D%0Aprint%28exchangesort_2%28seq2%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 교환정렬 최악/최선 시간 복잡도</a>
+<li><a href="http://pythontutor.com/visualize.html#code=def%20exchangesort_2%28S%29%3A%0A%20%20%20%20count%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28i%2B1,%20len%28S%29%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28S%5Bj%5D%20%3C%20S%5Bi%5D%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20count%20%2B%3D%201%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20S%5Bi%5D,%20S%5Bj%5D%20%3D%20S%5Bj%5D,%20S%5Bi%5D%0A%20%20%20%20return%20count%0A%20%20%20%20%0A%0Aseq%20%3D%20%5B1,%202,%204,%204,%205,%207%5D%0Aprint%28exchangesort_2%28seq%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 교환정렬 최선 시간 복잡도</a>
   확인</li>
 </ul>
 
@@ -14179,7 +14203,7 @@ $$A(n) = \frac{3n+1}{4}$$
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14233,7 +14257,7 @@ $$A(n) = \frac{3n+1}{4}$$
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14294,7 +14318,7 @@ $$A(n) = \frac{3n+1}{4}$$
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
