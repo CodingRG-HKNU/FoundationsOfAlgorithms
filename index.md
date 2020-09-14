@@ -15,9 +15,13 @@
     * 4절 차수
         [[html]](./slides/Algo-01-AlgorithmsIntro-4.slides.html) &nbsp;
         [[pdf]](./slides/Algo-01-AlgorithmsIntro-4-slides.pdf)
+* 2장 분할정복
+    * 1편: 1절, 2절, 3절 &nbsp;
+        [[html]](./slides/Algo-02-Divide-and-Conquer-1.slides.html) &nbsp;
+    * 2편: 4절, 5절, 8절 &nbsp;
 * ...
 
-*주의: HTML을 이용하여 슬라이드를 사용할 경우 전진과 후진을 `space`와 `shift+space` 키를 활용할 것.*
+*주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
 
 ### 강의에 사용되는 언어: 파이썬 3
 
