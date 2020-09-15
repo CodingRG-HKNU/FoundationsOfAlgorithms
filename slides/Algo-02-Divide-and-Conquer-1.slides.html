@@ -13209,7 +13209,14 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#51452;&#50836;-&#45236;&#50857;">&#51452;&#50836; &#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#45236;&#50857;">&#182;</a></h2><ul>
+<h2 id="&#51452;&#50836;-&#45236;&#50857;">&#51452;&#50836; &#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#45236;&#50857;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1&#54200;">1&#54200;<a class="anchor-link" href="#1&#54200;">&#182;</a></h3><ul>
 <li>1절 이분검색</li>
 </ul>
 
@@ -13239,7 +13246,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h3 id="2&#54200;">2&#54200;<a class="anchor-link" href="#2&#54200;">&#182;</a></h3><ul>
 <li>4절 빠른정렬(분할교환정렬)</li>
 </ul>
 
@@ -13312,6 +13319,46 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#48373;&#49845;:-while-&#48152;&#48373;&#47928;&#51012;-&#54876;&#50857;&#54620;-&#51060;&#48516;&#44160;&#49353;">&#48373;&#49845;: while &#48152;&#48373;&#47928;&#51012; &#54876;&#50857;&#54620; &#51060;&#48516;&#44160;&#49353;<a class="anchor-link" href="#&#48373;&#49845;:-while-&#48152;&#48373;&#47928;&#51012;-&#54876;&#50857;&#54620;-&#51060;&#48516;&#44160;&#49353;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이분검색 알고리즘</span>
+
+<span class="k">def</span> <span class="nf">binsearch</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># while 반복문 실행횟수 확인용    </span>
+    <span class="n">loop_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span> <span class="ow">and</span> <span class="n">location</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">loop_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">S</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="n">mid</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">S</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">loop_count</span><span class="p">)</span>    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#49444;&#44228;-&#51204;&#47029;">&#49444;&#44228; &#51204;&#47029;<a class="anchor-link" href="#&#49444;&#44228;-&#51204;&#47029;">&#182;</a></h4><ol>
 <li>$x$가 배열의 중앙에 위치하고 있는 항목과 같으면 해당 항목 인덱스 리턴.</li>
 <li>그렇지 않으면 아래 실행<ul>
@@ -13361,7 +13408,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이분검색 재귀</span>
@@ -13386,7 +13433,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">]</span>
@@ -13581,7 +13628,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
+<h4 id="&#50696;&#51228;:-&#51089;&#46041;&#48277;-&#49444;&#47749;">&#50696;&#51228;: &#51089;&#46041;&#48277; &#49444;&#47749;<a class="anchor-link" href="#&#50696;&#51228;:-&#51089;&#46041;&#48277;-&#49444;&#47749;">&#182;</a></h4>
 </div>
 </div>
 </div><div class="fragment">
@@ -13640,7 +13687,7 @@ a.anchor-link {
 <td style="text-align:left">10 12 13 15 20 22 25</td>
 </tr>
 <tr>
-<td style="text-align:center">-</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">10 12 20 27</td>
 <td style="text-align:left">13 15 22 25</td>
 <td style="text-align:left">10 12 13 15 20 22 25 27</td>
@@ -13653,10 +13700,12 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">lList</span><span class="p">,</span> <span class="n">rList</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 정렬된 두 리스트를 정렬된 리스트로 합병하기</span>
+
+<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">lList</span><span class="p">,</span> <span class="n">rList</span><span class="p">):</span>
     <span class="n">mergedList</span> <span class="o">=</span><span class="p">[]</span> 
   
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">lList</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">rList</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span> 
@@ -13678,7 +13727,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
@@ -13696,18 +13745,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>count: 3
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[120]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13724,7 +13762,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 합병정렬 재귀</span>
@@ -13748,7 +13786,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
@@ -13783,7 +13821,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>참조: <a href="">PythonTutor: 합병정렬 재귀</a></li>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=%23%20%EC%A0%95%EB%A0%AC%EB%90%9C%20%EB%91%90%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%A0%95%EB%A0%AC%EB%90%9C%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20%ED%95%A9%EB%B3%91%ED%95%98%EA%B8%B0%0A%0Adef%20merge%28lList,%20rList%29%3A%0A%20%20%20%20mergedList%20%3D%5B%5D%20%0A%20%20%0A%20%20%20%20while%20len%28lList%29%3E0%20and%20len%28rList%29%3E0%3A%20%0A%20%20%20%20%20%20%20%20if%20lList%5B0%5D%20%3C%20rList%5B0%5D%3A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20mergedList.append%28lList.pop%280%29%29%0A%20%20%20%20%20%20%20%20else%3A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20mergedList.append%28rList.pop%280%29%29%20%0A%0A%20%20%20%20mergedList.extend%28lList%29%20%0A%20%20%20%20mergedList.extend%28rList%29%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20return%20mergedList%20%0A%0A%23%20%ED%95%A9%EB%B3%91%EC%A0%95%EB%A0%AC%20%EC%9E%AC%EA%B7%80%0A%0Adef%20mergesort%28aList%29%3A%0A%20%20%20%20if%20len%28aList%29%20%3C%3D%201%3A%0A%20%20%20%20%20%20%20%20return%20aList%0A%0A%20%20%20%20mid%20%3D%20len%28aList%29%20//%202%0A%0A%20%20%20%20lList%20%3D%20mergesort%28aList%5B%3Amid%5D%29%0A%20%20%20%20rList%20%3D%20mergesort%28aList%5Bmid%3A%5D%29%0A%0A%20%20%20%20return%20merge%28lList,%20rList%29%0A%0A%0AaList%20%3D%20%5B27,%2010,%2012,%2020,%2025,%2013,%2015,%2022%5D%0A%0Aprint%28mergesort%28aList%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 합병정렬 재귀</a></li>
 </ul>
 
 </div>
@@ -13821,7 +13859,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_count</span><span class="p">(</span><span class="n">lList</span><span class="p">,</span> <span class="n">rList</span><span class="p">):</span>
@@ -13850,7 +13888,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
@@ -13879,7 +13917,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[116]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13906,7 +13944,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
@@ -13935,7 +13973,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[129]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13967,11 +14005,18 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="$n-=-2^k$&#51064;-&#44221;&#50864;">$n = 2^k$&#51064; &#44221;&#50864;<a class="anchor-link" href="#$n-=-2^k$&#51064;-&#44221;&#50864;">&#182;</a></h4>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="$n-=-2^k$&#51064;-&#44221;&#50864;">$n = 2^k$&#51064; &#44221;&#50864;<a class="anchor-link" href="#$n-=-2^k$&#51064;-&#44221;&#50864;">&#182;</a></h4><ul>
+<ul>
 <li><p>아래 점화식 성립: $n &gt; 1$</p>
 <p>\begin{align*}
   W(n) &amp;= W \Big(\frac n 2 \Big) + W \Big(\frac n 2 \Big) + (n-1) \</p>
@@ -13980,12 +14025,27 @@ a.anchor-link {
 </code></pre>
 <p>\end{align*}</p>
 </li>
-<li><p>종료 조건: $W(1) = 0$</p>
-</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>종료 조건: $W(1) = 0$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>위 점화식에 대한 해답:</p>
 <p>$$W(n) = n\, \lg n - (n- 1) \in \Theta(n\, \lg n)$$</p>
-</li>
-<li><p>증명: 생략</p>
 </li>
 </ul>
 
@@ -13995,24 +14055,58 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#51068;&#48152;&#51201;&#51064;-&#44221;&#50864;">&#51068;&#48152;&#51201;&#51064; &#44221;&#50864;<a class="anchor-link" href="#&#51068;&#48152;&#51201;&#51064;-&#44221;&#50864;">&#182;</a></h4><ul>
+<ul>
+<li>증명: 생략</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51068;&#48152;&#51201;&#51064;-&#44221;&#50864;">&#51068;&#48152;&#51201;&#51064; &#44221;&#50864;<a class="anchor-link" href="#&#51068;&#48152;&#51201;&#51064;-&#44221;&#50864;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>아래 점화식 성립:</p>
 <p>\begin{align*}
   W(n) &amp;= W \Big(\Big\lfloor \frac n 2 \Big\rfloor\Big) + W \Big(\Big\lceil\frac n 2 \Big\rceil\Big) + (n-1)
   \end{align*}</p>
-</li>
-<li><p>따라서 다음 최악 시간복잡도 성립</p>
-<p>\begin{align*}
-  W(n) &amp;\in \Theta(n\,\lg n)
-  \end{align*}</p>
-</li>
-<li><p>증명: 생략</p>
 </li>
 </ul>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>따라서 다음 최악 시간복잡도 성립</p>
+<p>\begin{align*}
+  W(n) &amp;\in \Theta(n\,\lg n)
+  \end{align*}</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>증명: 생략</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14020,9 +14114,56 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>앞서 살펴본 <code>mergesort()</code> 함수는 호출될 때마다 매번 <code>aList</code> 인자에 대한 메모리를 새롭게 사용.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>이유: 파이썬 리스트의 슬라이싱을 사용하기 때문</p>
+<div class="highlight"><pre><span></span><span class="n">lList</span> <span class="o">=</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">aList</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+  <span class="n">rList</span> <span class="o">=</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">aList</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>재귀 함수를 호출할 때 추가 메모리를 사용하지 않는 방법<ul>
+<li><code>low</code>와 <code>high</code>를 추가 인자로 사용하여 주어진 리스트에서 살펴볼 구간을 가리키도록 함.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이런 합병정렬 알고리즘을 <strong>제자리</strong> 합병정렬이라 부름.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 제자리 합병정렬 재귀</span>
@@ -14032,8 +14173,8 @@ a.anchor-link {
 
         <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 
-        <span class="n">lList</span> <span class="o">=</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
-        <span class="n">rList</span> <span class="o">=</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+        <span class="n">lList</span> <span class="o">=</span> <span class="n">mergesort2</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span>
+        <span class="n">rList</span> <span class="o">=</span> <span class="n">mergesort2</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">lList</span><span class="p">,</span> <span class="n">rList</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">aList</span><span class="p">[</span><span class="n">low</span><span class="p">:</span><span class="n">low</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
@@ -14046,7 +14187,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">aList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
@@ -14077,6 +14218,16 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=%23%20%EC%A0%95%EB%A0%AC%EB%90%9C%20%EB%91%90%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EC%A0%95%EB%A0%AC%EB%90%9C%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20%ED%95%A9%EB%B3%91%ED%95%98%EA%B8%B0%0A%0Adef%20merge%28lList,%20rList%29%3A%0A%20%20%20%20mergedList%20%3D%5B%5D%20%0A%20%20%0A%20%20%20%20while%20len%28lList%29%3E0%20and%20len%28rList%29%3E0%3A%20%0A%20%20%20%20%20%20%20%20if%20lList%5B0%5D%20%3C%20rList%5B0%5D%3A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20mergedList.append%28lList.pop%280%29%29%0A%20%20%20%20%20%20%20%20else%3A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20mergedList.append%28rList.pop%280%29%29%20%0A%0A%20%20%20%20mergedList.extend%28lList%29%20%0A%20%20%20%20mergedList.extend%28rList%29%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20return%20mergedList%20%0A%0A%23%20%EC%A0%9C%EC%9E%90%EB%A6%AC%20%ED%95%A9%EB%B3%91%EC%A0%95%EB%A0%AC%20%EC%9E%AC%EA%B7%80%0A%0Adef%20mergesort2%28aList,%20low,%20high%29%3A%0A%20%20%20%20%0A%20%20%20%20if%20%28low%20%3C%20high%29%3A%0A%0A%20%20%20%20%20%20%20%20mid%20%3D%20%28low%20%2B%20high%29%20//%202%0A%0A%20%20%20%20%20%20%20%20lList%20%3D%20mergesort2%28aList,%20low,%20mid%29%0A%20%20%20%20%20%20%20%20rList%20%3D%20mergesort2%28aList,%20mid%2B1,%20high%29%0A%0A%20%20%20%20%20%20%20%20return%20merge%28lList,%20rList%29%0A%20%20%20%20return%20aList%5Blow%3Alow%2B1%5D%0A%20%20%20%20%0A%0AaList%20%3D%20%5B27,%2010,%2012,%2020,%2025,%2013,%2015,%2022%5D%0A%0Aprint%28mergesort2%28aList,%200,%207%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 제자리 합병정렬 재귀</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

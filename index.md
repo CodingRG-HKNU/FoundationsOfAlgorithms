@@ -16,9 +16,16 @@
         [[html]](./slides/Algo-01-AlgorithmsIntro-4.slides.html) &nbsp;
         [[pdf]](./slides/Algo-01-AlgorithmsIntro-4-slides.pdf)
 * 2장 분할정복
-    * 1편: 1절, 2절, 3절 &nbsp;
+    * 1편 &nbsp;
         [[html]](./slides/Algo-02-Divide-and-Conquer-1.slides.html) &nbsp;
-    * 2편: 4절, 5절, 8절 &nbsp;
+        [[pdf]](./slides/Algo-02-Divide-and-Conquer-1.slides.pdf) &nbsp;
+    		* 1절: 이분검색
+				* 2절: 합병정렬
+				* 3절: 분할정복 설계방법
+    * 2편&nbsp;
+				* 4절: 빠른정렬(분할교환정렬)
+				* 5절: 쉬트라쎈의 행렬곱셈 알고리즘
+				* 8절: 분할정복을 사용할 수 없는 경우
 * ...
 
 *주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
