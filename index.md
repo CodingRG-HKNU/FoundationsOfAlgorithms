@@ -18,7 +18,7 @@
 * 2장 분할정복
     * 1편 &nbsp;
         [[html]](./slides/Algo-02-Divide-and-Conquer-1.slides.html) &nbsp;
-        [[pdf]](./slides/Algo-02-Divide-and-Conquer-1.slides.pdf) &nbsp;
+        [[pdf]](./slides/Algo-02-Divide-and-Conquer-1-slides.pdf) &nbsp;
         * 1절: 이분검색
         * 2절: 합병정렬
         * 3절: 분할정복 설계방법
