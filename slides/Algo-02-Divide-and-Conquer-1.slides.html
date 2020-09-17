@@ -14224,6 +14224,157 @@ W(n) &amp;= W \Big(\frac n 2 \Big) + W \Big(\frac n 2 \Big) + (n-1) \\
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="mergesort-&#50752;-mergesort2-&#44277;&#44036;&#48373;&#51105;&#46020;"><code>mergesort</code> &#50752; <code>mergesort2</code> &#44277;&#44036;&#48373;&#51105;&#46020;<a class="anchor-link" href="#mergesort-&#50752;-mergesort2-&#44277;&#44036;&#48373;&#51105;&#46020;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>두 알고리즘의 시간 복잡도는 동일하지만 공간복잡도는 크게 차이남.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="mergesort&#51032;-&#52628;&#44032;-&#47700;&#47784;&#47532;-&#44277;&#44036;&#48373;&#51105;&#46020;"><code>mergesort</code>&#51032; &#52628;&#44032; &#47700;&#47784;&#47532; &#44277;&#44036;&#48373;&#51105;&#46020;<a class="anchor-link" href="#mergesort&#51032;-&#52628;&#44032;-&#47700;&#47784;&#47532;-&#44277;&#44036;&#48373;&#51105;&#46020;">&#182;</a></h4><ul>
+<li><code>merge</code>를 재귀호출할 때마다 입력 리스트만큼 메모리 추가 사용</li>
+<li>따라서 <code>merge</code>의 최악 시간복잡도만큼 추가 메모리 사용</li>
+<li>즉, <code>mergesort</code> 알고리즘의 추가 메모리 일정 공간복잡도는 $\Theta(n \lg n)$</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="mergesort2&#51032;-&#52628;&#44032;-&#47700;&#47784;&#47532;-&#44277;&#44036;-&#48373;&#51105;&#46020;"><code>mergesort2</code>&#51032; &#52628;&#44032; &#47700;&#47784;&#47532; &#44277;&#44036; &#48373;&#51105;&#46020;<a class="anchor-link" href="#mergesort2&#51032;-&#52628;&#44032;-&#47700;&#47784;&#47532;-&#44277;&#44036;-&#48373;&#51105;&#46020;">&#182;</a></h4><ul>
+<li>재귀 호출할 때 추가 메모리를 사용하지 않음. </li>
+<li>즉, 추가 메모리에 대한 일정 공간복잡도는 상수. 즉, $\Theta(1)$.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="mergesort-&#50752;-mergesort2&#51032;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;"><code>mergesort</code> &#50752; <code>mergesort2</code>&#51032; &#49892;&#54665;&#49884;&#44036; &#48708;&#44368;<a class="anchor-link" href="#mergesort-&#50752;-mergesort2&#51032;-&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>실행시간 거의 차이 없음. 즉, 공간복잡도의 차이가 실행시간에 크게 영향 미치지는 않음.</li>
+<li><code>merge</code> 함수를 실행할 때 드는 비용이 절대적이기 때문.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 시간 측정을 위한 모듈</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigNum</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">reversedList</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bigNum</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">mergesort</span><span class="p">(</span><span class="n">reversedList</span><span class="p">)</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">duration</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;걸린시간: </span><span class="si">{duration:.2f}</span><span class="s2">초&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>걸린시간: 95.59초
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bigNum</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">reversedList</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bigNum</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">mergesort2</span><span class="p">(</span><span class="n">reversedList</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bigNum</span><span class="p">)</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">duration</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;걸린시간: </span><span class="si">{duration:.2f}</span><span class="s2">초&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>걸린시간: 96.02초
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="3&#51208;-&#48516;&#54624;&#51221;&#48373;-&#51204;&#47029;">3&#51208; &#48516;&#54624;&#51221;&#48373; &#51204;&#47029;<a class="anchor-link" href="#3&#51208;-&#48516;&#54624;&#51221;&#48373;-&#51204;&#47029;">&#182;</a></h2>
 </div>
 </div>
