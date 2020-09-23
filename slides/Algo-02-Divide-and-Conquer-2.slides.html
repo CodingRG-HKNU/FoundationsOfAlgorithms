@@ -13237,9 +13237,10 @@ a.anchor-link {
 <li><p>기준원소</p>
 <ul>
 <li>보통 맨 인편에 위치한 값 선정</li>
+<li>무엇을 선택해도 확률적으로 동일함.</li>
 </ul>
 </li>
-<li><p>항상 가장 빠른 정렬 알고리즘은 않지만 평균적으로 가장 빠름.</p>
+<li><p>항상 가장 빠른 정렬 알고리즘은 아니지만 평균적으로 가장 빠름.</p>
 </li>
 </ul>
 
@@ -13252,26 +13253,24 @@ a.anchor-link {
 <h4 id="&#53301;&#51221;&#47148;-&#51089;&#46041;-&#50696;&#51228;">&#53301;&#51221;&#47148; &#51089;&#46041; &#50696;&#51228;<a class="anchor-link" href="#&#53301;&#51221;&#47148;-&#51089;&#46041;-&#50696;&#51228;">&#182;</a></h4>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>정렬 대상:</p>
-<p><code>15 22 13 27 12 10 20 25</code></p>
-</li>
+<li>정렬 대상: <code>15 22 13 27 12 10 20 25</code></li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div align="center"><img src="./images/algo02/algo02-03.png" width="400"/></div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13299,10 +13298,11 @@ a.anchor-link {
 <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">aList</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
 
     <span class="n">pivotitem</span> <span class="o">=</span> <span class="n">aList</span><span class="p">[</span><span class="n">low</span><span class="p">]</span>     <span class="c1"># 기준원소(pivot)</span>
-    <span class="n">pivotpoint</span> <span class="o">=</span> <span class="n">low</span>           <span class="c1"># 분할 후 기준원소 위치</span>
+    <span class="n">pivotpoint</span> <span class="o">=</span> <span class="n">low</span>           <span class="c1"># 분할 후 기준원소가 저장될 위치</span>
  
     <span class="c1"># 기준원소 보다 작은 값을 리스트 왼편에 위치시키기</span>
-    <span class="c1"># i 는 기준원소를 제외한 구간 내 전체 항목 대상으로 움직임</span>
+    <span class="c1"># i 는 기준원소를 제외한 구간 내 항목 전체를 대상으로 움직임</span>
+
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">low</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">aList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">pivotitem</span><span class="p">:</span>
             <span class="n">pivotpoint</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -13750,7 +13750,1750 @@ A(n) &amp;\approx 1.38(n+1) \lg n \in \Theta(n\, \lg n)
 \end{align*}
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5&#51208;-&#49800;&#53944;&#46972;&#49468;&#51032;-&#54665;&#47148;&#44273;&#49480;-&#50508;&#44256;&#47532;&#51608;">5&#51208; &#49800;&#53944;&#46972;&#49468;&#51032; &#54665;&#47148;&#44273;&#49480; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#5&#51208;-&#49800;&#53944;&#46972;&#49468;&#51032;-&#54665;&#47148;&#44273;&#49480;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>행렬곱셈의 정의는 매우 간단함.</li>
+<li>하지만 행렬의 크기가 커짐에 따라 매우 오랜 시간 소요됨.</li>
+<li>이유: 두 개의 $n \times n$ 행렬 곱셈에 대한 시간복잡도는 $\Theta(n^3)$임.<ul>
+<li>입력크기: 정방행렬의 행의 개수 $n$ </li>
+<li>단위연산: 곱셈</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#51221;&#51032;">&#54364;&#51456; &#54665;&#47148;&#44273;&#49480; &#51221;&#51032;<a class="anchor-link" href="#&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#51221;&#51032;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>일반적으로 알려진 행렬곱셈의 정의는 다음과 같음:</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo02/algo02-05.png" width="300"/></div><p>&lt;출처: <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">위키피디아 - 행렬곱셈</a>&gt;</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>행렬 $A$와 $B$가 아래와 같이 주어졌을 때,</p>
+$$
+A = \begin{bmatrix}
+        a_{1 1} &amp; a_{1 2}\\
+        a_{2 1} &amp; a_{2 2}
+        \end{bmatrix} \qquad
+B = \begin{bmatrix}
+        b_{1 1} &amp; b_{1 2}\\
+        b_{2 1} &amp; b_{2 2}
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>두 행렬의 곱 $C$을 정의할 수 있다.</p>
+$$
+C = A \times B = \begin{bmatrix}
+        c_{1 1} &amp; c_{1 2}\\
+        c_{2 1} &amp; c_{2 2}
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이때 다음이 성립한다.</p>
+\begin{align*}
+c_{i j} &amp;= a_{i 1} \cdot b_{1 j} + a_{i 2} \cdot b_{2 j} \\
+        &amp;= \sum_{k=1}^{2} a_{i k} \cdot b_{k j}
+\end{align*}
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>예를 들어</p>
+\begin{align*}
+    \begin{bmatrix}
+    2 &amp; 3 \\
+    4 &amp; 1
+    \end{bmatrix} 
+    \times
+    \begin{bmatrix}
+    5 &amp; 7 \\
+    6 &amp; 8
+    \end{bmatrix}
+    &amp;=
+    \begin{bmatrix}
+    2\times 5 + 3\times 6 &amp; 2 \times 7 + 3 \times 8 \\
+    4 \times 5 + 1 \times 6 &amp; 4 \times 7 + 1 \times 8
+    \end{bmatrix} \\
+    &amp;=
+    \begin{bmatrix}
+    28 &amp; 38 \\
+    26 &amp; 36
+    \end{bmatrix}
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#51068;&#48152;&#54868;">&#54364;&#51456; &#54665;&#47148;&#44273;&#49480; &#51068;&#48152;&#54868;<a class="anchor-link" href="#&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#51068;&#48152;&#54868;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>두 개의 $n \times n$ 행렬곱셈 결과</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+c_{i j} &amp;= a_{i 1} \cdot b_{1 j} + a_{i 2} \cdot b_{2 j} + \cdots + a_{i n} \cdot b_{n j} \\
+        &amp;= \sum_{k=1}^{n} a_{i k} \cdot b_{k j}
+\end{align*}
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#50508;&#44256;&#47532;&#51608;">&#54364;&#51456; &#54665;&#47148;&#44273;&#49480; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">C</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[28, 38], [26, 36]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">matrixmult</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    
+    <span class="c1"># C 행렬을 초기화 하기 위해 리스트 조건제시법 활용</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matrixmult</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[28, 38], [26, 36]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;&#51004;&#47196;-&#51328;-&#45908;-&#45800;&#49692;&#54616;&#44172;-&#51221;&#51032;&#54624;-&#49688;-&#51080;&#51020;.">&#47532;&#49828;&#53944; &#51312;&#44148;&#51228;&#49884;&#48277;&#51004;&#47196; &#51328; &#45908; &#45800;&#49692;&#54616;&#44172; &#51221;&#51032;&#54624; &#49688; &#51080;&#51020;.<a class="anchor-link" href="#&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;&#51004;&#47196;-&#51328;-&#45908;-&#45800;&#49692;&#54616;&#44172;-&#51221;&#51032;&#54624;-&#49688;-&#51080;&#51020;.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">matrixmult_com</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">sum</span><span class="p">([</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matrixmult_com</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[28, 38], [26, 36]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#45336;&#54028;&#51060;-&#54876;&#50857;">&#45336;&#54028;&#51060; &#54876;&#50857;<a class="anchor-link" href="#&#45336;&#54028;&#51060;-&#54876;&#50857;">&#182;</a></h4><ul>
+<li>넘파이 어레이의 인덱실, 슬라이싱 기능이 탁월함.</li>
+<li>기본 리스트를 이용할 경우 훨씬 많은 수고를 써야 함.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">matrixmult_np</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    
+    <span class="c1"># (nxn) 크기의 0행렬 생성. 실수가 아닌 정수 행렬 생성.</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+                <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matrixmult_np</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">B1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[28, 38],
+       [26, 36]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#54364;&#51456; &#54665;&#47148;&#44273;&#49480;&#51032; &#51068;&#51221; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#54364;&#51456;-&#54665;&#47148;&#44273;&#49480;&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#44273;&#49480;-&#44592;&#51456;">&#44273;&#49480; &#44592;&#51456;<a class="anchor-link" href="#&#44273;&#49480;-&#44592;&#51456;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기: 정방행렬의 행의 수 $n$</li>
+<li>단위연산: 가장 안쪽에 있는 for 반복문에서 사용된 곱셈</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>총 곱셈 횟수:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+T(n) = n \times n \times n = n^3 \in \Theta(n^3)
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#45927;&#49480;-&#44592;&#51456;">&#45927;&#49480; &#44592;&#51456;<a class="anchor-link" href="#&#45927;&#49480;-&#44592;&#51456;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기: 정방행렬의 행의 수 $n$</li>
+<li>단위연산: 가장 안쪽에 있는 for 반복문에서 사용된 덧셈</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>총 덧셈 횟수:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+T(n) = n \times n \times (n-1) = n^3 - n^2 \in \Theta(n^3)
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;">&#49800;&#53944;&#46972;&#50056; &#54665;&#47148;&#44273;&#49480;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>행렬 $A$와 $B$가 아래와 같이 주어졌을 때,</p>
+$$
+A = \begin{bmatrix}
+        a_{1 1} &amp; a_{1 2}\\
+        a_{2 1} &amp; a_{2 2}
+        \end{bmatrix} \qquad
+B = \begin{bmatrix}
+        b_{1 1} &amp; b_{1 2}\\
+        b_{2 1} &amp; b_{2 2}
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음이 성립한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+C = A \times B = \begin{bmatrix}
+        m_1 + m_4 - m_5 + m_7 &amp; m_3 + m_5\\
+        m_2 + m_4 &amp; m_1 + m_3 - m_2 + m_6
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+m_1 &amp;= (a_{1 1} + a_{2 2})\, (b_{1 1} + b_{2 2}) \\
+m_2 &amp;= (a_{2 1} + a_{2 2})\, b_{1 1}\\
+m_3 &amp;= a_{1 1}\, (b_{1 2} - b_{2 2})\\
+m_4 &amp;= a_{2 2}\, (b_{2 1} - b_{1 1})\\
+m_5 &amp;= (a_{1 1} + a_{1 2})\, b_{2 2}\\
+m_6 &amp;= (a_{2 1} - a_{1 1})\, (b_{1 1} + b_{1 2})\\
+m_7 &amp;= (a_{1 2} - a{2 2})\, (b_{2 1} + b_{2 2})
+\end{align*}
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49800;&#53944;&#46972;&#50056;&#51032;-$2\times-2$-&#54665;&#47148;&#44273;&#49480;-&#49884;&#44036;&#48373;&#51105;&#46020;">&#49800;&#53944;&#46972;&#50056;&#51032; $2\times 2$ &#54665;&#47148;&#44273;&#49480; &#49884;&#44036;&#48373;&#51105;&#46020;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;&#51032;-$2\times-2$-&#54665;&#47148;&#44273;&#49480;-&#49884;&#44036;&#48373;&#51105;&#46020;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>슈트라쎈 행렬곱셈에 필요한 연산:<ul>
+<li>곱셈: 7번</li>
+<li>덧셈/뺄셈: 18번</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>표준 행렬곱셈에 필요한 연산:<ul>
+<li>곱셈: 8번</li>
+<li>덧셈/뺄셈: 4번</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;-&#51068;&#48152;&#54868;">&#49800;&#53944;&#46972;&#50056; &#54665;&#47148;&#44273;&#49480; &#51068;&#48152;&#54868;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;-&#51068;&#48152;&#54868;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>가정:$n = 2^k$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$A$와 $B$ 두 행렬을 각각 4개의 아래와 같이 부분행렬로 나눔.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+A = \begin{bmatrix}
+        A_{1 1} &amp; A_{1 2}\\
+        A_{2 1} &amp; A_{2 2}
+        \end{bmatrix} \qquad
+B = \begin{bmatrix}
+        B_{1 1} &amp; B_{1 2}\\
+        B_{2 1} &amp; B_{2 2}
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이제 $C$를 다음과 같이 계산할 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo02/algo02-06.png" width="450"/></div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>여기에 슈트라쎈 행렬곱셈 적용:</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+C = A \times B = \begin{bmatrix}
+        M_1 + M_4 - M_5 + M_7 &amp; M_3 + M_5\\
+        M_2 + M_4 &amp; M_1 + M_3 - M_2 + M_6
+        \end{bmatrix}
+$$
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+M_1 &amp;= (A_{1 1} + A_{2 2})\times (B_{1 1} + B_{2 2}) \\
+M_2 &amp;= (A_{2 1} + A_{2 2})\times B_{1 1}\\
+M_3 &amp;= A_{1 1}\times (B_{1 2} - B_{2 2})\\
+M_4 &amp;= A_{2 2}\times (B_{2 1} - B_{1 1})\\
+M_5 &amp;= (A_{1 1} + A_{1 2})\times B_{2 2}\\
+M_6 &amp;= (A_{2 1} - A_{1 1})\times (B_{1 1} + B_{1 2})\\
+M_7 &amp;= (A_{1 2} - a{2 2})\times (B_{2 1} + B_{2 2})
+\end{align*}
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;-&#54028;&#51060;&#50028;-&#50508;&#44256;&#47532;&#51608;">&#49800;&#53944;&#46972;&#50056; &#54665;&#47148;&#44273;&#49480; &#54028;&#51060;&#50028; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;-&#54028;&#51060;&#50028;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>numpy</code> 모듈의 <code>array</code> 활용</li>
+<li>그렇지 않으면 행렬 분할(partition)과 행렬 합병을 구현하기가 매우 불편해짐.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54665;&#47148;-&#48516;&#54624;-&#50508;&#44256;&#47532;&#51608;">&#54665;&#47148; &#48516;&#54624; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#54665;&#47148;-&#48516;&#54624;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h4>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$n \times n$ 행렬을 크기가 절반인 네 개의 부분행렬로 분할하기</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span> 
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    (n x n) 크기의 행렬을 (n/2 x n/2) 크기의 행렬 4개로 분할하기</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">size2</span> <span class="o">=</span> <span class="n">size</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[:</span><span class="n">size2</span><span class="p">,</span> <span class="p">:</span><span class="n">size2</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[:</span><span class="n">size2</span><span class="p">,</span> <span class="n">size2</span><span class="p">:],</span> 
+            <span class="n">matrix</span><span class="p">[</span><span class="n">size2</span><span class="p">:,</span> <span class="p">:</span><span class="n">size2</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[</span><span class="n">size2</span><span class="p">:,</span> <span class="n">size2</span><span class="p">:])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49800;&#53944;&#46972;&#50056;-&#50508;&#44256;&#47532;&#51608;">&#49800;&#53944;&#46972;&#50056; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h4>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 분할정복을 활용한 슈트라센의 행렬곱셈 (재귀)</span>
+
+<span class="k">def</span> <span class="nf">strassen</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span> 
+    <span class="c1"># n=2 일 경우: 일반 정의가 좀 더 빠름</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+
+    <span class="c1"># 행렬 인자 4등분하기. 재귀적으로 (2x2) 행렬이 만들어질 때까지.</span>
+    <span class="n">A11</span><span class="p">,</span> <span class="n">A12</span><span class="p">,</span> <span class="n">A21</span><span class="p">,</span> <span class="n">A22</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
+    <span class="n">B11</span><span class="p">,</span> <span class="n">B12</span><span class="p">,</span> <span class="n">B21</span><span class="p">,</span> <span class="n">B22</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> 
+
+    <span class="c1"># 분할된 부분행렬에 대해 재귀 적용</span>
+    <span class="n">M1</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A11</span> <span class="o">+</span> <span class="n">A22</span><span class="p">,</span> <span class="n">B11</span> <span class="o">+</span> <span class="n">B22</span><span class="p">)</span> 
+    <span class="n">M2</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A21</span> <span class="o">+</span> <span class="n">A22</span><span class="p">,</span> <span class="n">B11</span><span class="p">)</span> 
+    <span class="n">M3</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span> <span class="n">B12</span> <span class="o">-</span> <span class="n">B22</span><span class="p">)</span> 
+    <span class="n">M4</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span> <span class="n">B21</span> <span class="o">-</span> <span class="n">B11</span><span class="p">)</span> 
+    <span class="n">M5</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A11</span> <span class="o">+</span> <span class="n">A12</span><span class="p">,</span> <span class="n">B22</span><span class="p">)</span> 
+    <span class="n">M6</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A21</span> <span class="o">-</span> <span class="n">A11</span><span class="p">,</span> <span class="n">B11</span> <span class="o">+</span> <span class="n">B12</span><span class="p">)</span> 
+    <span class="n">M7</span> <span class="o">=</span> <span class="n">strassen</span><span class="p">(</span><span class="n">A12</span> <span class="o">-</span> <span class="n">A22</span><span class="p">,</span> <span class="n">B21</span> <span class="o">+</span> <span class="n">B22</span><span class="p">)</span> 
+
+    <span class="c1"># 4개의 부분행렬 완성</span>
+    <span class="n">C11</span> <span class="o">=</span> <span class="n">M1</span> <span class="o">+</span> <span class="n">M4</span> <span class="o">-</span> <span class="n">M5</span> <span class="o">+</span> <span class="n">M7</span> 
+    <span class="n">C12</span> <span class="o">=</span> <span class="n">M3</span> <span class="o">+</span> <span class="n">M5</span> 
+    <span class="n">C21</span> <span class="o">=</span> <span class="n">M2</span> <span class="o">+</span> <span class="n">M4</span> 
+    <span class="n">C22</span> <span class="o">=</span> <span class="n">M1</span> <span class="o">+</span> <span class="n">M3</span> <span class="o">-</span> <span class="n">M2</span> <span class="o">+</span> <span class="n">M6</span> 
+
+    <span class="c1"># 4개의 부분행렬을 하나의 행렬로 합병</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">C11</span><span class="p">,</span> <span class="n">C12</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">C21</span><span class="p">,</span> <span class="n">C22</span><span class="p">))))</span> 
+
+    <span class="k">return</span> <span class="n">C</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+
+<span class="n">B2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strassen</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span> <span class="n">B2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 43,  53,  54,  37],
+       [123, 149, 130,  93],
+       [ 95, 110,  44,  41],
+       [103, 125, 111,  79]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=import%20numpy%20as%20np%20%0A%0Adef%20matrixmult_np%28A,%20B%29%3A%0A%20%20%20%20n%20%3D%20len%28A%29%0A%20%20%20%20%0A%20%20%20%20%23%20%28nxn%29%20%ED%81%AC%EA%B8%B0%EC%9D%98%200%ED%96%89%EB%A0%AC%20%EC%83%9D%EC%84%B1.%20%EC%8B%A4%EC%88%98%EA%B0%80%20%EC%95%84%EB%8B%8C%20%EC%A0%95%EC%88%98%20%ED%96%89%EB%A0%AC%20%EC%83%9D%EC%84%B1.%0A%20%20%20%20C%20%3D%20np.zeros%28%28n,n%29,%20dtype%3Dint%29%0A%0A%20%20%20%20for%20i%20in%20range%280,2%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%280,%202%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20k%20in%20range%280,%202%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20C%5Bi,%20j%5D%20%2B%3D%20A%5Bi,%20k%5D%20*%20B%5Bk,%20j%5D%0A%20%20%20%20%0A%20%20%20%20return%20C%0A%20%20%20%20%0Adef%20partition%28matrix%29%3A%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20%28n%20x%20n%29%20%ED%81%AC%EA%B8%B0%EC%9D%98%20%ED%96%89%EB%A0%AC%EC%9D%84%20%28n/2%20x%20n/2%29%20%ED%81%AC%EA%B8%B0%EC%9D%98%20%ED%96%89%EB%A0%AC%204%EA%B0%9C%EB%A1%9C%20%EB%B6%84%ED%95%A0%ED%95%98%EA%B8%B0%0A%20%20%20%20%22%22%22%0A%20%20%20%20size%20%3D%20len%28matrix%29%0A%20%20%20%20size2%20%3D%20size//2%0A%20%20%20%20return%20%28matrix%5B%3Asize2,%20%3Asize2%5D,%20matrix%5B%3Asize2,%20size2%3A%5D,%20%0A%20%20%20%20%20%20%20%20%20%20%20%20matrix%5Bsize2%3A,%20%3Asize2%5D,%20matrix%5Bsize2%3A,%20size2%3A%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%23%20%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EC%8A%88%ED%8A%B8%EB%9D%BC%EC%84%BC%EC%9D%98%20%ED%96%89%EB%A0%AC%EA%B3%B1%EC%85%88%20%28%EC%9E%AC%EA%B7%80%29%0A%0Adef%20strassen%28A,%20B%29%3A%20%0A%20%20%20%20%23%20n%3D2%20%EC%9D%BC%20%EA%B2%BD%EC%9A%B0%3A%20%EC%9D%BC%EB%B0%98%20%EC%A0%95%EC%9D%98%EA%B0%80%20%EC%A2%80%20%EB%8D%94%20%EB%B9%A0%EB%A6%84%0A%20%20%20%20if%20len%28A%29%20%3D%3D%202%3A%20%0A%20%20%20%20%20%20%20%20return%20matrixmult_np%28A,%20B%29%0A%0A%20%20%20%20%23%23%20n%20%3D%201%20%EB%A1%9C%20%EC%84%A4%EC%A0%95%ED%95%A0%20%EC%88%98%EB%8F%84%20%EC%9E%88%EC%9D%8C%0A%20%20%20%20%23%20if%20len%28A%29%20%3D%3D%201%3A%20%0A%20%20%20%20%23%20%20%20%20%20return%20A%20*%20B%0A%0A%20%20%20%20%23%20%ED%96%89%EB%A0%AC%20%EC%9D%B8%EC%9E%90%204%EB%93%B1%EB%B6%84%ED%95%98%EA%B8%B0.%20%EC%9E%AC%EA%B7%80%EC%A0%81%EC%9C%BC%EB%A1%9C%20%282x2%29%20%ED%96%89%EB%A0%AC%EC%9D%B4%20%EB%A7%8C%EB%93%A4%EC%96%B4%EC%A7%88%20%EB%95%8C%EA%B9%8C%EC%A7%80.%0A%20%20%20%20A11,%20A12,%20A21,%20A22%20%3D%20partition%28A%29%20%0A%20%20%20%20B11,%20B12,%20B21,%20B22%20%3D%20partition%28B%29%20%0A%0A%20%20%20%20%23%20%EB%B6%84%ED%95%A0%EB%90%9C%20%EB%B6%80%EB%B6%84%ED%96%89%EB%A0%AC%EC%97%90%20%EB%8C%80%ED%95%B4%20%EC%9E%AC%EA%B7%80%20%EC%A0%81%EC%9A%A9%0A%20%20%20%20M1%20%3D%20strassen%28A11%20%2B%20A22,%20B11%20%2B%20B22%29%20%0A%20%20%20%20M2%20%3D%20strassen%28A21%20%2B%20A22,%20B11%29%20%0A%20%20%20%20M3%20%3D%20strassen%28A11,%20B12%20-%20B22%29%20%0A%20%20%20%20M4%20%3D%20strassen%28A22,%20B21%20-%20B11%29%20%0A%20%20%20%20M5%20%3D%20strassen%28A11%20%2B%20A12,%20B22%29%20%0A%20%20%20%20M6%20%3D%20strassen%28A21%20-%20A11,%20B11%20%2B%20B12%29%20%0A%20%20%20%20M7%20%3D%20strassen%28A12%20-%20A22,%20B21%20%2B%20B22%29%20%0A%0A%20%20%20%20%23%204%EA%B0%9C%EC%9D%98%20%EB%B6%80%EB%B6%84%ED%96%89%EB%A0%AC%20%EC%99%84%EC%84%B1%0A%20%20%20%20C11%20%3D%20M1%20%2B%20M4%20-%20M5%20%2B%20M7%20%0A%20%20%20%20C12%20%3D%20M3%20%2B%20M5%20%0A%20%20%20%20C21%20%3D%20M2%20%2B%20M4%20%0A%20%20%20%20C22%20%3D%20M1%20%2B%20M3%20-%20M2%20%2B%20M6%20%0A%0A%20%20%20%20%23%204%EA%B0%9C%EC%9D%98%20%EB%B6%80%EB%B6%84%ED%96%89%EB%A0%AC%EC%9D%84%20%ED%95%98%EB%82%98%EC%9D%98%20%ED%96%89%EB%A0%AC%EB%A1%9C%20%ED%95%A9%EB%B3%91%0A%20%20%20%20C%20%3D%20np.vstack%28%28np.hstack%28%28C11,%20C12%29%29,%20np.hstack%28%28C21,%20C22%29%29%29%29%20%0A%0A%20%20%20%20return%20C%0A%0AA2%20%3D%20np.array%28%5B%5B1,%202,%203,%204%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B5,%206,%207,%208%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B9,%201,%202,%203%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B4,%205,%206,%207%5D%5D%29%0A%0AB2%20%3D%20np.array%28%5B%5B8,%209,%201,%202%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B3,%204,%205,%206%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B7,%208,%209,%201%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B2,%203,%204,%205%5D%5D%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0Astrassen%28A2,%20B2%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=py3anaconda&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 슈트라쎈 행렬곱셈 작동 예제</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#49800;&#53944;&#46972;&#50056; &#54665;&#47148;&#44273;&#49480;&#51032; &#51068;&#51221; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#49800;&#53944;&#46972;&#50056;-&#54665;&#47148;&#44273;&#49480;&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#44273;&#49480;-&#44592;&#51456;">&#44273;&#49480; &#44592;&#51456;<a class="anchor-link" href="#&#44273;&#49480;-&#44592;&#51456;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기: 정방행렬의 행의 수 $n = 2^k$</li>
+<li>단위연산: 곱셈 호출 횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>총 곱셈 횟수:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= 7\, T \big(\frac n 2 \big) \\
+T(1) &amp;= 1
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 식을 전개하면:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= 7\, T(2^{k-1}) \\
+     &amp;= 7^2\, T(2^{k-2}) \\
+     &amp;= \dots \\
+     &amp;= 7^k T(1)\\
+     &amp;= 7^k \\
+     &amp;= 7^{\lg n} = n^{\lg 7} \\
+     &amp;\approx n^{2.81} \\
+     &amp;\in \Theta(n^{2.81})
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#45927;&#49480;/&#48772;&#49480;-&#44592;&#51456;">&#45927;&#49480;/&#48772;&#49480; &#44592;&#51456;<a class="anchor-link" href="#&#45927;&#49480;/&#48772;&#49480;-&#44592;&#51456;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기: 정방행렬의 행의 수 $n = 2^k$</li>
+<li>단위연산: 덧셈/뺄셈 호출 횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>총 덧셈/뺄셈 횟수:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= 7\, T \big( \frac n 2 \big) + 18 \big( \frac n 2 \big)^2\\
+T(1) &amp;= 0
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 식을 전개하면:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= 6 n^{\lg 7} -6 n^{2} \\
+     &amp;\approx 6 n^{2.81} - 6 n^2 \\
+     &amp;\in \Theta(n^{2.81})
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="$n-=-2^k$&#44032;-&#50500;&#45772;-&#44221;&#50864;">$n = 2^k$&#44032; &#50500;&#45772; &#44221;&#50864;<a class="anchor-link" href="#$n-=-2^k$&#44032;-&#50500;&#45772;-&#44221;&#50864;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>0으로 이루어진 행과 열을 필요한 만큼 추가하여 $2^k$ 모양의 행렬로 만든 후 슈트라쎈 알고리즘 적용</li>
+<li>이후 0으로 이루어진 행과 열 삭제.</li>
+<li>따라서 시간복잡도는 $\Theta(n^{2.81})$로 동일함.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54364;&#51456;-&#50508;&#44256;&#47532;&#51608;-&#45824;-&#49800;&#53944;&#46972;&#49468;-&#50508;&#44256;&#47476;&#51608;">&#54364;&#51456; &#50508;&#44256;&#47532;&#51608; &#45824; &#49800;&#53944;&#46972;&#49468; &#50508;&#44256;&#47476;&#51608;<a class="anchor-link" href="#&#54364;&#51456;-&#50508;&#44256;&#47532;&#51608;-&#45824;-&#49800;&#53944;&#46972;&#49468;-&#50508;&#44256;&#47476;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">표준 알고리즘</th>
+<th style="text-align:left">슈트라쎈 알고리즘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">곱셉</td>
+<td style="text-align:left">$n^3$</td>
+<td style="text-align:left">$n^{2.81}$</td>
+</tr>
+<tr>
+<td style="text-align:left">덧셈/뺄셈</td>
+<td style="text-align:left">$n^3 - n^2$</td>
+<td style="text-align:left">$6 n^{2.81} - 6 n^2$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44592;&#53440;-&#50508;&#44256;&#47532;&#51608;">&#44592;&#53440; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#44592;&#53440;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>슈트라센 알고리즘보다 효율적인 알고리즘은 아직 알려지지 않았음.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이론상: 모든 행렬곱셈 알고리즘의 복잡도는 $\Theta(n^2)$ 이상이어야 함.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>하지만: 아직 $\Theta(n^2)$의 시간복잡도를 갖는 알고리즘은 알려지지 않았으며, 불가능하다는 증명도 없음.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8&#51208;-&#48516;&#54624;&#51221;&#48373;&#51012;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#44221;&#50864;">8&#51208; &#48516;&#54624;&#51221;&#48373;&#51012; &#49324;&#50857;&#54624; &#49688; &#50630;&#45716; &#44221;&#50864;<a class="anchor-link" href="#8&#51208;-&#48516;&#54624;&#51221;&#48373;&#51012;-&#49324;&#50857;&#54624;-&#49688;-&#50630;&#45716;-&#44221;&#50864;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44221;&#50864;-1">&#44221;&#50864; 1<a class="anchor-link" href="#&#44221;&#50864;-1">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>크기가 $n$인 입력이 2개 이상의 조각으로 분할되며, 분할된 부분들의 크기가 거의 $n$에 가깝게 되는 경우</li>
+<li>시간복잡도: 지수 시간</li>
+<li><p>예제: 1장에서 살펴본 피보나찌 수열 계산 함수(재귀)</p>
+<div class="highlight"><pre><span></span><span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44221;&#50864;-2">&#44221;&#50864; 2<a class="anchor-link" href="#&#44221;&#50864;-2">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>크기가 $n$인 입력이 거의 $n$개의 조각으로 분할되며, 분할된 부분의 크기가 $n/c$인 경우. 단, $c$는 상수.</li>
+<li>시간복잡도: $n^{\Theta(\lg n)}$</li>
+<li><p>예제:</p>
+<p>\begin{align*}
+  T(n) &amp;= n\, T(n/c)
+  \end{align*}</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#50672;&#49845;&#47928;&#51228;">&#50672;&#49845;&#47928;&#51228;<a class="anchor-link" href="#&#50672;&#49845;&#47928;&#51228;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51648;&#49688;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#47928;&#51228;:-&#54616;&#45432;&#51060;&#53457;">&#51648;&#49688; &#49884;&#44036;&#48373;&#51105;&#46020; &#47928;&#51228;: &#54616;&#45432;&#51060;&#53457;<a class="anchor-link" href="#&#51648;&#49688;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#47928;&#51228;:-&#54616;&#45432;&#51060;&#53457;">&#182;</a></h3><ul>
+<li>연습문제 17번 참조</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#47928;&#51228;">&#47928;&#51228;<a class="anchor-link" href="#&#47928;&#51228;">&#182;</a></h4><ul>
+<li>말뚝 3개와 크기가 모두 다른 구멍난 디스크 $n$개가 주어졌음.</li>
+<li>한 말뚝에 쌓여 있는 $n$개의 디스크를 다른 말뚝으로 옮겨여 함.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51228;&#54620;-&#51312;&#44148;">&#51228;&#54620; &#51312;&#44148;<a class="anchor-link" href="#&#51228;&#54620;-&#51312;&#44148;">&#182;</a></h4><ol>
+<li>세 개의 말둑 이외에는 디스크를 놓을 수 없음.</li>
+<li>한 번에 하나의 디스크만 옮길 수 있음.</li>
+<li>큰 디스크를 작은 디스크 위에 올려놓을 수 없음.</li>
+</ol>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51089;&#46041;&#48277;-&#52280;&#51312;">&#51089;&#46041;&#48277; &#52280;&#51312;<a class="anchor-link" href="#&#51089;&#46041;&#48277;-&#52280;&#51312;">&#182;</a></h4><ul>
+<li><a href="http://www.cs.cmu.edu/~cburch/survey/recurse/hanoi.html">About the Towers of Hanoi</a>: 직접 실행 가능</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54644;&#44208;&#52293;-1">&#54644;&#44208;&#52293; 1<a class="anchor-link" href="#&#54644;&#44208;&#52293;-1">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>의사코드 수준의 재귀 알고리즘.</li>
+<li>하지만 알고리즘 핵심은 모두 포함됨.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pseudo_hanoi</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{begin}</span><span class="s2">에서 디스크 1개를 </span><span class="si">{end}</span><span class="s2">로 옮기세요&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">pseudo_hanoi</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{begin}</span><span class="s2">에서 디스크 </span><span class="si">{n}</span><span class="s2">을 </span><span class="si">{end}</span><span class="s2">로 옮기세요&quot;</span><span class="p">)</span>
+    <span class="n">pseudo_hanoi</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 디스크 1개</span>
+<span class="n">num_disks</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">pseudo_hanoi</span><span class="p">(</span><span class="s1">&#39;말뚝 A&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 C&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 B&#39;</span><span class="p">,</span> <span class="n">num_disks</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>말뚝 A에서 디스크 1개를 말뚝 C로 옮기세요
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 디스크 3개</span>
+<span class="n">num_disks</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">pseudo_hanoi</span><span class="p">(</span><span class="s1">&#39;말뚝 A&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 C&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 B&#39;</span><span class="p">,</span> <span class="n">num_disks</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>말뚝 A에서 디스크 1개를 말뚝 C로 옮기세요
+말뚝 A에서 디스크 2을 말뚝 B로 옮기세요
+말뚝 C에서 디스크 1개를 말뚝 B로 옮기세요
+말뚝 A에서 디스크 3을 말뚝 C로 옮기세요
+말뚝 B에서 디스크 1개를 말뚝 A로 옮기세요
+말뚝 B에서 디스크 2을 말뚝 C로 옮기세요
+말뚝 A에서 디스크 1개를 말뚝 C로 옮기세요
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="pseudo_hanoi&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;"><code>pseudo_hanoi</code>&#51032; &#51068;&#51221; &#49884;&#44036;&#48373;&#51105;&#46020;<a class="anchor-link" href="#pseudo_hanoi&#51032;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;">&#182;</a></h4><ul>
+<li>입력크기: 디스크 수 $n$</li>
+<li>단위연산: 이동 횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이동할 때 마다 카운트를 세면 됨. 따라서 아래 점화식 성립:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+     &amp;= 2\, T(n-1) + 1 \\
+     &amp; \\
+T(1) &amp;= 1
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>따라서 다음 성립:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= T(n-1) + 1 + T(n-1) \\
+     &amp;= 2\, T(n-1) + 1 \\
+     &amp;= 2^2\, T(n-2) + 2 + 1 \\
+     &amp;= \dots \\
+     &amp;= 2^{n-1}\, T(1) + 2^{n-2} + 2^{n-3} + \cdots + 2 + 1\\
+     &amp;= 2^{n-1} + 2^{n-2} + 2^{n-3} + \cdots + 2 + 1\\
+     &amp;= 2^n - 1
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이동횟수 확인을 위해 count 변수 활용 가능</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pseudo_hanoi_</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> 
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{begin}</span><span class="s2">에서 디스크 1개를 </span><span class="si">{end}</span><span class="s2">로 옮기세요&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">pseudo_hanoi_</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{begin}</span><span class="s2">에서 디스크 </span><span class="si">{n}</span><span class="s2">을 </span><span class="si">{end}</span><span class="s2">로 옮기세요&quot;</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">pseudo_hanoi_</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+    
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 디스크 4개</span>
+<span class="n">num_disks</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">pseudo_hanoi_</span><span class="p">(</span><span class="s1">&#39;말뚝 A&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 C&#39;</span><span class="p">,</span><span class="s1">&#39;말뚝 B&#39;</span><span class="p">,</span> <span class="n">num_disks</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>말뚝 A에서 디스크 1개를 말뚝 B로 옮기세요
+말뚝 A에서 디스크 2을 말뚝 C로 옮기세요
+말뚝 B에서 디스크 1개를 말뚝 C로 옮기세요
+말뚝 A에서 디스크 3을 말뚝 B로 옮기세요
+말뚝 C에서 디스크 1개를 말뚝 A로 옮기세요
+말뚝 C에서 디스크 2을 말뚝 B로 옮기세요
+말뚝 A에서 디스크 1개를 말뚝 B로 옮기세요
+말뚝 A에서 디스크 4을 말뚝 C로 옮기세요
+말뚝 B에서 디스크 1개를 말뚝 C로 옮기세요
+말뚝 B에서 디스크 2을 말뚝 A로 옮기세요
+말뚝 C에서 디스크 1개를 말뚝 A로 옮기세요
+말뚝 B에서 디스크 3을 말뚝 C로 옮기세요
+말뚝 A에서 디스크 1개를 말뚝 B로 옮기세요
+말뚝 A에서 디스크 2을 말뚝 C로 옮기세요
+말뚝 B에서 디스크 1개를 말뚝 C로 옮기세요
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>15</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조</li>
+</ul>
+$$
+15 = 2^4 -1
+$$
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54644;&#44208;&#52293;-2">&#54644;&#44208;&#52293; 2<a class="anchor-link" href="#&#54644;&#44208;&#52293;-2">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>말뚝에 실제로 쌓이는 것까지 구현하기</li>
+<li>말뚝을 리스트로 구현</li>
+<li>주의사항<ul>
+<li>큰 숫자가 먼저 들어오지만, 작은 숫자가 먼저 나가는 기능을 구현해야 함.</li>
+<li>아이디어: 스택처럼 작동하도록 해야함. <ul>
+<li>스택(stack): FILO(First In Last Out)를 따르는 자료구조</li>
+</ul>
+</li>
+<li>리트스 자료형의 <code>pop()</code>과 <code>append()</code> 메서드 활용</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 말뚝 인자로 리스트 활용</span>
+
+<span class="k">def</span> <span class="nf">hanoi_list</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="n">end</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">begin</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hanoi_list</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="n">hanoi_list</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="n">hanoi_list</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tower_a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tower_b</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tower_c</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 디스크 수</span>
+<span class="n">num_discs</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_discs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">tower_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 시작할 때</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;시작할 때:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_a: </span><span class="si">{tower_a}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_b: </span><span class="si">{tower_b}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_c: </span><span class="si">{tower_c}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="n">hanoi_list</span><span class="p">(</span><span class="n">tower_a</span><span class="p">,</span> <span class="n">tower_c</span><span class="p">,</span> <span class="n">tower_b</span><span class="p">,</span> <span class="n">num_discs</span><span class="p">)</span> 
+
+<span class="c1"># 이동 후</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">이동 후:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_a: </span><span class="si">{tower_a}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_b: </span><span class="si">{tower_b}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_c: </span><span class="si">{tower_c}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>시작할 때:
+tower_a: [3, 2, 1]
+tower_b: []
+tower_c: []
+
+이동 후:
+tower_a: []
+tower_b: []
+tower_c: [3, 2, 1]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54644;&#44208;&#52293;-3">&#54644;&#44208;&#52293; 3<a class="anchor-link" href="#&#54644;&#44208;&#52293;-3">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>말뚝 구현을 위해 스택 자료구조 직접 활용 가능.</li>
+<li>스택 클래스를 직접 선언함. 다음 두 가지 메서드 구현해야 함.<ul>
+<li><code>push()</code>: 항목 추가를 위한 메서드</li>
+<li><code>pop()</code>: 항목 삭제를 위한 메서드</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Stack</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_container</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="n">end</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">begin</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tower_a</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span> 
+<span class="n">tower_b</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span> 
+<span class="n">tower_c</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+
+<span class="c1"># 디스크 수</span>
+<span class="n">num_discs</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_discs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">tower_a</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 시작할 때</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;시작할 때:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_a: </span><span class="si">{tower_a}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_b: </span><span class="si">{tower_b}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_c: </span><span class="si">{tower_c}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="n">hanoi</span><span class="p">(</span><span class="n">tower_a</span><span class="p">,</span> <span class="n">tower_c</span><span class="p">,</span> <span class="n">tower_b</span><span class="p">,</span> <span class="n">num_discs</span><span class="p">)</span> 
+
+<span class="c1"># 이동 후</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">이동 후:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_a: </span><span class="si">{tower_a}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_b: </span><span class="si">{tower_b}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tower_c: </span><span class="si">{tower_c}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>시작할 때:
+tower_a: [5, 4, 3, 2, 1]
+tower_b: []
+tower_c: []
+
+이동 후:
+tower_a: []
+tower_b: []
+tower_c: [5, 4, 3, 2, 1]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=class%20Stack%28%29%3A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20self._container%20%3D%20%5B%5D%0A%0A%20%20%20%20def%20push%28self,%20item%29%3A%0A%20%20%20%20%20%20%20%20self._container.append%28item%29%0A%0A%20%20%20%20def%20pop%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self._container.pop%28%29%0A%0A%20%20%20%20def%20__repr__%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20repr%28self._container%29%0A%20%20%20%20%20%20%20%20%0Adef%20hanoi%28begin,%20end,%20temp,%20n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%201%3A%20%0A%20%20%20%20%20%20%20%20end.push%28begin.pop%28%29%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20hanoi%28begin,%20temp,%20end,%20n%20-%201%29%20%0A%20%20%20%20%20%20%20%20hanoi%28begin,%20end,%20temp,%201%29%20%0A%20%20%20%20%20%20%20%20hanoi%28temp,%20end,%20begin,%20n%20-%201%29%0A%20%20%20%20%20%20%20%20%0Anum_discs%20%3D%203%0Atower_a%20%3D%20Stack%28%29%20%0Atower_b%20%3D%20Stack%28%29%20%0Atower_c%20%3D%20Stack%28%29%0A%0Afor%20i%20in%20range%28num_discs,%200,%20-1%29%3A%0A%20%20%20%20tower_a.push%28i%29%0A%0Ahanoi%28tower_a,%20tower_c,%20tower_b,%20num_discs%29%20&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 하노이탑 실행 과정</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 
