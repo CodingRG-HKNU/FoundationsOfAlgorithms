@@ -13471,7 +13471,17 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-$T(n)$">&#51068;&#51221; &#49884;&#44036;&#48373;&#51105;&#46020; $T(n)$<a class="anchor-link" href="#&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-$T(n)$">&#182;</a></h4><ul>
-<li>입력크기($n$): 정렬대상 조사구간 길이, 즉 <code>high - low + 1</code></li>
+<li>입력크기($n$): 정렬대상 조사구간 크기</li>
+<li>단위연산: 기준원소(pivot)와의 비교 횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>첫째 원소(기준원소)를 제외한 모든 원소와 비교. 따라서 다음 성립:</p>
 <p>$$T(n) = n-1$$</p>
 </li>
@@ -13486,38 +13496,184 @@ a.anchor-link {
 <h3 id="&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#52572;&#50501; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;: &#53301;&#51221;&#47148;(<code>quicksort</code>) &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기($n$): 정렬대상 리스트 구간 크기</li>
+<li>단위연산: <code>partition</code> 함수 실행 과정에서 기준원소(pivot)와의 비교 횟수</li>
+</ul>
+
+</div>
+</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-$W(n)$">&#52572;&#50501; &#49884;&#44036;&#48373;&#51105;&#46020; $W(n)$<a class="anchor-link" href="#&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-$W(n)$">&#182;</a></h4><ul>
-<li>입력크기($n$): 정렬대상 리스트 구간 길이</li>
-<li>단위연산: <code>partition</code> 함수 실행 과정에서 기준원소(pivot)와의 비교 횟수</li>
+<h4 id="&#51060;&#48120;-&#50724;&#47492;&#52264;&#49692;&#51004;&#47196;-&#51221;&#47148;&#46108;-&#47532;&#49828;&#53944;-&#51221;&#47148;-&#49884;&#44036;-&#48373;&#51105;&#46020;">&#51060;&#48120; &#50724;&#47492;&#52264;&#49692;&#51004;&#47196; &#51221;&#47148;&#46108; &#47532;&#49828;&#53944; &#51221;&#47148; &#49884;&#44036; &#48373;&#51105;&#46020;<a class="anchor-link" href="#&#51060;&#48120;-&#50724;&#47492;&#52264;&#49692;&#51004;&#47196;-&#51221;&#47148;&#46108;-&#47532;&#49828;&#53944;-&#51221;&#47148;-&#49884;&#44036;-&#48373;&#51105;&#46020;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이미 오름차순으로 정렬된 리스트를  정렬할 때의 시간 복잡도 $T(n)$ 계산</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>맨 왼편에 위치한 기준원소가 항상 제일 작은 값이라서 분할 후 기준원소 왼편에 위치할 리스트는 공리스트.
+  따라서:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+T(n) &amp;= T(0) + T(n-1) + (n-1) \\
+     &amp;= T(n-1) + (n-1) \\
+     &amp; \\
+T(0) &amp;= 0
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>위 점화식을 풀면 다음이 성립:</p>
+<p>$$T(n) = \frac{n(n-1)}{2}$$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>증명:</p>
+<p>\begin{align*}</p>
+
+<pre><code>  T(n) &amp;= T(n-1) + (n-1) \\
+       &amp;= T(n-2) + (n-2) + (n-1) \\
+       &amp;= \cdots \\
+       &amp;= T(1) + 1 + 2 + \cdots + (n-1) \\
+       &amp;= T(0) + 0 + 1 + \cdots + (n-1) \\
+       &amp; = \frac{n(n-1)}{2}
+</code></pre>
+<p>\end{align*}</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-$W(n)$">&#52572;&#50501; &#49884;&#44036;&#48373;&#51105;&#46020; $W(n)$<a class="anchor-link" href="#&#52572;&#50501;-&#49884;&#44036;&#48373;&#51105;&#46020;-$W(n)$">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래 부등식 증명 가능.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$W(n) \le \frac{n(n-1)}{2}$$
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ W(n) = \frac{n(n-1)}{2}$$
+<ul>
+<li>증명: 귀납법 활용(생략)</li>
+</ul>
+
 </div>
 </div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#54217;&#44512; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;: &#53301;&#51221;&#47148;(<code>quicksort</code>) &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+<ul>
+<li>결론</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$W(n) = \frac{n(n-1)}{2} \in \Theta(n^2)$$
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-$A(n)$">&#54217;&#44512; &#49884;&#44036;&#48373;&#51105;&#46020; $A(n)$<a class="anchor-link" href="#&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-$A(n)$">&#182;</a></h4><ul>
+<h3 id="&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#54217;&#44512; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;: &#53301;&#51221;&#47148;(<code>quicksort</code>) &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;:-&#53301;&#51221;&#47148;(quicksort)-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>입력크기($n$): 정렬대상 리스트 길이</li>
 <li>단위연산: <code>partition</code> 함수 실행 과정에서 기준원소(pivot)와의 비교 횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#44032;&#51221;">&#44032;&#51221;<a class="anchor-link" href="#&#44032;&#51221;">&#182;</a></h4><ul>
+<li>배열의 원소가 무작위하게 흩어져 있음.</li>
+<li>따라서 기준원소의 위치(pivotpoint)가 동일한 확률 $1/n$으로 0부터 $(n-1)$ 사이의 임의의 값이 됨.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#44592;&#51456;&#50896;&#49548;&#51032;-&#50948;&#52824;&#44032;-$p$&#51064;-&#44221;&#50864;">&#44592;&#51456;&#50896;&#49548;&#51032; &#50948;&#52824;&#44032; $p$&#51064; &#44221;&#50864;<a class="anchor-link" href="#&#44592;&#51456;&#50896;&#49548;&#51032;-&#50948;&#52824;&#44032;-$p$&#51064;-&#44221;&#50864;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>길이가 각각 $p$과 $(n-p-1)$인 부분배열로 나뉘어짐.</li>
+<li>따라서 정렬을 위해 평균적으로 아래 시간이 걸릴것으로 예상됨:</li>
 </ul>
 
 </div>
@@ -13526,7 +13682,72 @@ $$ W(n) = \frac{n(n-1)}{2}$$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$ A(n) \approx 1.38(n+1) \lg n \in \Theta(n\, \lg n)$$
+$$\frac{1}{n}\, \big[ A(p) + A(n-p-1) \big]$$
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$\frac 1 n$은 기준원소의 위치가 $p$일 확률.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-$A(n)$">&#54217;&#44512; &#49884;&#44036;&#48373;&#51105;&#46020; $A(n)$<a class="anchor-link" href="#&#54217;&#44512;-&#49884;&#44036;&#48373;&#51105;&#46020;-$A(n)$">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>앞서 구한 식을 임의의 $p$에 대해서 구해 더하면 평균 시간복잡도가 됨.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+A(n) &amp;= \sum_{p=0}^{n-1} \frac{1}{n}\, \big[ A(p) + A(n-p-1) \big] + (n-1)
+\end{align*}
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$(n-1)$은 분할에 걸리는 시간을 가리킴.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 식을 정리하면 다음과 같음(증명 생략).</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+A(n) &amp;\approx 1.38(n+1) \lg n \in \Theta(n\, \lg n)
+\end{align*}
 </div>
 </div>
 </div></div></section></section>
