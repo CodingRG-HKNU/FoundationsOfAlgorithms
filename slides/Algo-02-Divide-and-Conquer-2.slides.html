@@ -13236,7 +13236,7 @@ a.anchor-link {
 </li>
 <li><p>기준원소</p>
 <ul>
-<li>보통 맨 인편에 위치한 값 선정</li>
+<li>보통 맨 왼편에 위치한 값 선정</li>
 <li>무엇을 선택해도 확률적으로 동일함.</li>
 </ul>
 </li>
@@ -13552,11 +13552,16 @@ T(0) &amp;= 0
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>위 점화식을 풀면 다음이 성립:</p>
-<p>$$T(n) = \frac{n(n-1)}{2}$$</p>
-</li>
+<li>위 점화식을 풀면 다음이 성립:</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$T(n) = \frac{n(n-1)}{2}$$
 </div>
 </div>
 </div></section></section><section><section>
@@ -13564,20 +13569,23 @@ T(0) &amp;= 0
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>증명:</p>
-<p>\begin{align*}</p>
-
-<pre><code>  T(n) &amp;= T(n-1) + (n-1) \\
-       &amp;= T(n-2) + (n-2) + (n-1) \\
-       &amp;= \cdots \\
-       &amp;= T(1) + 1 + 2 + \cdots + (n-1) \\
-       &amp;= T(0) + 0 + 1 + \cdots + (n-1) \\
-       &amp; = \frac{n(n-1)}{2}
-</code></pre>
-<p>\end{align*}</p>
-</li>
+<li>증명:</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+    T(n) &amp;= T(n-1) + (n-1) \\
+         &amp;= T(n-2) + (n-2) + (n-1) \\
+         &amp;= \cdots \\
+         &amp;= T(1) + 1 + 2 + \cdots + (n-1) \\
+         &amp;= T(0) + 0 + 1 + \cdots + (n-1) \\
+         &amp; = \frac{n(n-1)}{2}
+\end{align*}
 </div>
 </div>
 </div></section></section><section><section>
@@ -13654,7 +13662,7 @@ $$W(n) = \frac{n(n-1)}{2} \in \Theta(n^2)$$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#44032;&#51221;">&#44032;&#51221;<a class="anchor-link" href="#&#44032;&#51221;">&#182;</a></h4><ul>
-<li>배열의 원소가 무작위하게 흩어져 있음.</li>
+<li>배열의 원소가 무작위적으로 흩어져 있음.</li>
 <li>따라서 기준원소의 위치(pivotpoint)가 동일한 확률 $1/n$으로 0부터 $(n-1)$ 사이의 임의의 값이 됨.</li>
 </ul>
 
@@ -14106,7 +14114,7 @@ c_{i j} &amp;= a_{i 1} \cdot b_{1 j} + a_{i 2} \cdot b_{2 j} + \cdots + a_{i n} 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#45336;&#54028;&#51060;-&#54876;&#50857;">&#45336;&#54028;&#51060; &#54876;&#50857;<a class="anchor-link" href="#&#45336;&#54028;&#51060;-&#54876;&#50857;">&#182;</a></h4><ul>
-<li>넘파이 어레이의 인덱실, 슬라이싱 기능이 탁월함.</li>
+<li>넘파이 어레이의 인덱싱, 슬라이싱 기능이 탁월함.</li>
 <li>기본 리스트를 이용할 경우 훨씬 많은 수고를 써야 함.</li>
 </ul>
 
@@ -14932,7 +14940,7 @@ T(n) &amp;= 6 n^{\lg 7} -6 n^{2} \\
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="&#51228;&#54620;-&#51312;&#44148;">&#51228;&#54620; &#51312;&#44148;<a class="anchor-link" href="#&#51228;&#54620;-&#51312;&#44148;">&#182;</a></h4><ol>
-<li>세 개의 말둑 이외에는 디스크를 놓을 수 없음.</li>
+<li>세 개의 말뚝 이외에는 디스크를 놓을 수 없음.</li>
 <li>한 번에 하나의 디스크만 옮길 수 있음.</li>
 <li>큰 디스크를 작은 디스크 위에 올려놓을 수 없음.</li>
 </ol>
