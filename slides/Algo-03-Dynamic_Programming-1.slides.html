@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Algo-03-Dynamic_Programming-2 slides</title>
+<title>Algo-03-Dynamic_Programming slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,6 +13202,894 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3&#51109;-&#46041;&#51201;&#44228;&#54925;">3&#51109; &#46041;&#51201;&#44228;&#54925;<a class="anchor-link" href="#3&#51109;-&#46041;&#51201;&#44228;&#54925;">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#51452;&#50836;-&#45236;&#50857;">&#51452;&#50836; &#45236;&#50857;<a class="anchor-link" href="#&#51452;&#50836;-&#45236;&#50857;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1&#54200;">1&#54200;<a class="anchor-link" href="#1&#54200;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>1절 이항계수 구하기</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>2절 플로이드-워셜 최단경로 알고리즘</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>3절 동적계획과 최적화 문제</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2&#54200;">2&#54200;<a class="anchor-link" href="#2&#54200;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>4절 외판원 문제</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>추가 내용: 0-1 배낭 채우기 문제</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#46041;&#51201;&#44228;&#54925;">&#46041;&#51201;&#44228;&#54925;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>분할정복 알고리즘과 유사함.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>문제의 입력사례를 분할하여 문제를 해결함</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>하지만, 작은 입력사례에 대한 결과를 기억해 두고, 나중에 필요할 때 사용한다는 점에서 분할정복과 다름.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54616;&#54693;&#49885;-&#45824;-&#49345;&#54693;&#49885;">&#54616;&#54693;&#49885; &#45824; &#49345;&#54693;&#49885;<a class="anchor-link" href="#&#54616;&#54693;&#49885;-&#45824;-&#49345;&#54693;&#49885;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>분할정복: 하향식(top-down) 방식. 재귀 알고리즘으로 구현하기에 매우 적절함.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>동적계획: 상향식(bottom-up) 방식. 작은 입력사례의 결과를 기억해둔 후 필요할 때 활용.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#44228;&#54925;(programming)&#51032;-&#50612;&#50896;">&#44228;&#54925;(programming)&#51032; &#50612;&#50896;<a class="anchor-link" href="#&#44228;&#54925;(programming)&#51032;-&#50612;&#50896;">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>계획(programming)의 원래 의미: 저장용도의 배열 구현하기</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>여기서는 다양한 형태의 배열 활용법을 다룸.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1&#51208;-&#51060;&#54637;&#44228;&#49688;-&#44396;&#54616;&#44592;">1&#51208; &#51060;&#54637;&#44228;&#49688; &#44396;&#54616;&#44592;<a class="anchor-link" href="#1&#51208;-&#51060;&#54637;&#44228;&#49688;-&#44396;&#54616;&#44592;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54028;&#49828;&#52860;&#51032;-&#49340;&#44033;&#54805;">&#54028;&#49828;&#52860;&#51032; &#49340;&#44033;&#54805;<a class="anchor-link" href="#&#54028;&#49828;&#52860;&#51032;-&#49340;&#44033;&#54805;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이전 행의 두 원소를 더해 새로운 원소를 추가해서 만드는 삼각형</li>
+<li><p>$n$번 행의 $k$번째 값 $a_{n, k}$에 대해 다음 점화식 성립:</p>
+<p>$$a_{n, k} = a_{(n-1), (k-1)} + a_{(n-1), k}$$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-01.gif" width="250"/></div><p>&lt;출처: <a href="https://en.wikipedia.org/wiki/Pascal%27s_triangle">파스칼의 삼각형(위키피디아)</a>&gt;</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51060;&#54637;&#44228;&#49688;">&#51060;&#54637;&#44228;&#49688;<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>파스칼의 삼각형에 사용된 값은 이항계수와 동일. 이유는 잠시 뒤 설명.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$a_{n, k} = {n\choose k}$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51060;&#54637;&#44228;&#49688;&#51032;-&#51032;&#48120;-1">&#51060;&#54637;&#44228;&#49688;&#51032; &#51032;&#48120; 1<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;&#51032;-&#51032;&#48120;-1">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>서로 다른 $n$ 개의 구술 중에서 임의로 서로 다른 $k$개의 구술을 선택하는 방법 (단, $0 \le k \le n$).</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+{n\choose k} = \frac{n!}{k! \, (n-k)!}    
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51060;&#54637;&#44228;&#49688;&#51032;-&#51032;&#48120;-2">&#51060;&#54637;&#44228;&#49688;&#51032; &#51032;&#48120; 2<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;&#51032;-&#51032;&#48120;-2">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래 다항식의 계수:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+(x + y)^n &amp;= b_0\, x^n\, y^0 + b_1\, x^{n-1}\, y^1 + b_2\, x^{n-2}\, y^2 + 
+\cdots + b_{n-1}\, x^1\, y^{n-1} + b_n\, x^0\, y^n \\
+&amp;= \sum_{k=0}^{n} {n\choose k}\, x^{n-k}\, y^k
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>응용 예제</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+2^n &amp;= (1 + 1)^n \\
+&amp;= \sum_{k=0}^{n} {n \choose k}\\
+&amp;= {n\choose 0} + {n\choose 1} + {n\choose 2} + \cdots + {n\choose n-1} + {n\choose n}
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51060;&#54637;&#44228;&#49688;&#50752;-&#54028;&#49828;&#52860;&#51032;-&#49340;&#44033;&#54805;">&#51060;&#54637;&#44228;&#49688;&#50752; &#54028;&#49828;&#52860;&#51032; &#49340;&#44033;&#54805;<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;&#50752;-&#54028;&#49828;&#52860;&#51032;-&#49340;&#44033;&#54805;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이항계수에 대해 아래 점화식 성립(증명 생략)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+{n\choose k} = 
+\begin{cases}
+{n-1 \choose k-1} + {n-1\choose k}, &amp; 0 &lt; k &lt; n \\
+&amp; \\
+1, &amp; k \in \{0, n\}
+\end{cases}
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>2차원 행렬 형식으로 표현하면 다음과 같음.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+...</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51060;&#54637;&#44228;&#49688;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;:-&#51116;&#44480;-(&#48516;&#54624;&#51221;&#48373;)">&#51060;&#54637;&#44228;&#49688; &#50508;&#44256;&#47532;&#51608; &#44396;&#54788;: &#51116;&#44480; (&#48516;&#54624;&#51221;&#48373;)<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;:-&#51116;&#44480;-(&#48516;&#54624;&#51221;&#48373;)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>문제: 이항계수 계산</p>
+</li>
+<li><p>입력 파라미터: 음이 아닌 정수 $n$과 $k$, 단, $k \le n$.</p>
+</li>
+<li><p>반환값: ${n \choose k}$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이항계수 재귀 알고리즘</span>
+
+<span class="k">def</span> <span class="nf">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># 초기값</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">else</span><span class="p">:</span>    
+        <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>재귀 피보나찌 수열 함수와 유사. (1장 참조)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="bin-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;"><code>bin</code> &#50508;&#44256;&#47532;&#51608;&#51032; &#48373;&#51105;&#46020;<a class="anchor-link" href="#bin-&#50508;&#44256;&#47532;&#51608;&#51032;-&#48373;&#51105;&#46020;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>매우 비효율적임.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이유: 반복된 계산이 매우 많음. 피보나찌 수열의 경우와 유사.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>예를 들어, <code>bin(n-1, k-1)</code> 과 <code>bin(n-1, k)</code> 는 둘 모두 
+  서로 독립적으로 <code>bin(n-2, k-1)</code>를 계산함.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>bin(n, k)</code> 계산을 위해 필요한 <code>bin()</code> 함수 호출 횟수 (증명 생략):</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+2{n\choose k} -1
+$$
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>기본적으로 지수함수 정도의 나쁜 시간복잡도를 가짐. 이유:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+{n\choose k} \approx \frac{n^k}{k!}
+$$
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#51060;&#54637;&#44228;&#49688;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;:-&#46041;&#51201;&#44228;&#54925;">&#51060;&#54637;&#44228;&#49688; &#50508;&#44256;&#47532;&#51608; &#44396;&#54788;: &#46041;&#51201;&#44228;&#54925;<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;:-&#46041;&#51201;&#44228;&#54925;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>반복을 이용한 피보나찌 함수 구현에 사용된 아이디어임.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>작은 입력사례에 대한 결과를 배열에 저장해두고 필요할 경우 재활용함.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래 피보나찌 함수를 동적계획으로 구현한 것과 유사하게 구현 가능.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">fi</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>${n \choose k}$를 구하기 위해 아래 그림과 같이 2차원 행렬 $B$의 항목을 채워나가야 함.<ul>
+<li>$B[0][0]$ 에서 지작</li>
+<li>위에서 아래로 재귀 관계식을 적용하여 파스칼의 삼각형을 완성해 나가야 함.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-02.png" width="400"/></div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;-&#54876;&#50857;-&#50696;&#51228;">&#47532;&#49828;&#53944; &#51312;&#44148;&#51228;&#49884;&#48277; &#54876;&#50857; &#50696;&#51228;<a class="anchor-link" href="#&#47532;&#49828;&#53944;-&#51312;&#44148;&#51228;&#49884;&#48277;-&#54876;&#50857;-&#50696;&#51228;">&#182;</a></h4><ul>
+<li>일정 모양의 리스트를 생성할 때 유용함.</li>
+<li>알고리즘에 사용될 행렬 $B$를 영행렬로 초기화할 때 사용.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># n = 5, k = 3 인 경우 6x4 크기의 영행렬 생성하기</span>
+<span class="c1"># 리스트 조건제시법 활용</span>
+
+<span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[0, 0, 0, 0],
+ [0, 0, 0, 0],
+ [0, 0, 0, 0],
+ [0, 0, 0, 0],
+ [0, 0, 0, 0],
+ [0, 0, 0, 0]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이분검색 재귀</span>
+
+<span class="k">def</span> <span class="nf">bin2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># n x k 모양의 행렬 준비하기.</span>
+    <span class="c1"># 리스트 조건제시법 활용</span>
+    
+    <span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">B</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#49892;&#54665;&#49884;&#44036; &#48708;&#44368;<a class="anchor-link" href="#&#49892;&#54665;&#49884;&#44036;-&#48708;&#44368;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>재귀 알고리즘과 동적계획 알고리즘 비교</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$n=30$, $k=14$에 대해 동적계획 알고리즘은 바로 계산</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bin2</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>145422675</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>반면에 재귀 알고리즘은 30여초 걸림. $n, k$가 좀 더 커지면 매우 오래 걸림.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>30.6296808719635
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#46041;&#51201;&#44228;&#54925;-&#50508;&#44256;&#47532;&#51608;-&#49884;&#44036;&#48373;&#51105;&#46020;">&#46041;&#51201;&#44228;&#54925; &#50508;&#44256;&#47532;&#51608; &#49884;&#44036;&#48373;&#51105;&#46020;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;-&#50508;&#44256;&#47532;&#51608;-&#49884;&#44036;&#48373;&#51105;&#46020;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력 크기: $n$과 $k$</li>
+<li>단위연산: <code>j</code> 변수에 대한 <code>for</code> 반복문 실행횟수</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>i = 0일 때:      1회
+i = 1일 때:      2회
+i = 2일 때:      3회
+...
+i = k-1일 때:    k회
+i = k일 때:      k+1회
+i = (k+1)일 때:  k+1회
+...
+i = n일 때:      k+1회</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>따라서 다음 성립</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+1 + 2 + 3 + \cdots + k + (k+1)\cdot (n-k+1) &amp;= \frac{(2n-k+2)(k+1)}{2} \\
+&amp;\in\Theta(n\,k)
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#46041;&#51201;&#44228;&#54925;-&#50508;&#44256;&#47532;&#51608;-&#44060;&#49440;&#54616;&#44592;">&#46041;&#51201;&#44228;&#54925; &#50508;&#44256;&#47532;&#51608; &#44060;&#49440;&#54616;&#44592;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;-&#50508;&#44256;&#47532;&#51608;-&#44060;&#49440;&#54616;&#44592;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#48169;&#48277;-1">&#48169;&#48277; 1<a class="anchor-link" href="#&#48169;&#48277;-1">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>길이가 $k+1$인 1차원 배열 이용 가능</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이유: $i$번 행을 계산하기 위해 $i-1$번 행만 필요하기 때문.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#48169;&#48277;-2">&#48169;&#48277; 2<a class="anchor-link" href="#&#48169;&#48277;-2">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래 사실 이용 가능</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+{n \choose k} = {n \choose n-k}
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=%23%20%EC%9D%B4%EB%B6%84%EA%B2%80%EC%83%89%20%EC%9E%AC%EA%B7%80%0A%0Adef%20bin2%28n,%20k%29%3A%0A%20%20%20%20%23%20n*k%20%EB%AA%A8%EC%96%91%EC%9D%98%20%ED%96%89%EB%A0%AC%20%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0.%0A%20%20%20%20%23%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%20%EC%A1%B0%EA%B1%B4%EC%A0%9C%EC%8B%9C%EB%B2%95%20%ED%99%9C%EC%9A%A9%0A%20%20%20%20%0A%20%20%20%20B%20%3D%20%5B%5B0%20for%20_%20in%20range%28k%2B1%29%5D%20for%20_%20in%20range%28n%2B1%29%5D%0A%0A%20%20%20%20for%20i%20in%20range%28n%2B1%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28min%28i,%20k%29%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20j%20%3D%3D%200%20or%20j%20%3D%3D%20i%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20B%5Bi%5D%5Bj%5D%20%3D%201%0A%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20B%5Bi%5D%5Bj%5D%20%3D%20B%5Bi-1%5D%5Bj-1%5D%20%2B%20B%5Bi-1%5D%5Bj%5D%0A%20%20%20%20%0A%20%20%20%20return%20B%5Bn%5D%5Bk%5D%0A%20%20%20%20%0Abin2%283,%202%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=py3anaconda&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 동적계획 이항계수 알고리즘</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2&#51208;-&#54540;&#47196;&#51060;&#46300;-&#50892;&#49500;-&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;">2&#51208; &#54540;&#47196;&#51060;&#46300;-&#50892;&#49500; &#52572;&#45800;&#44221;&#47196; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#2&#51208;-&#54540;&#47196;&#51060;&#46300;-&#50892;&#49500;-&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h2>
 </div>
 </div>
@@ -13337,7 +14225,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center"><img src="./images/algo03/algo03-03.png" width="400"/></div>
+<div align="center"><img src="./images/algo03/algo03-03.png" width="350"/></div>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13436,7 +14324,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>도시 간의 최단 경로</li>
+<li>도시 간의 최단경로</li>
 </ul>
 
 </div>
@@ -13456,7 +14344,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>지도 앱에서 경유 추가</li>
+<li>지도앱에서 경유 추가</li>
 </ul>
 
 </div>
@@ -13584,7 +14472,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;-&#46041;&#51201;&#44228;&#54925;-&#49444;&#44228;-&#51204;&#47029;">&#52572;&#45800;&#44221;&#47196; &#50508;&#44256;&#47532;&#51608; &#46041;&#51201;&#44228;&#54925; &#49444;&#44228; &#51204;&#47029;<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;-&#46041;&#51201;&#44228;&#54925;-&#49444;&#44228;-&#51204;&#47029;">&#182;</a></h3>
+<h3 id="&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;-&#46041;&#51201;&#44228;&#54925;&#48277;-&#49444;&#44228;-&#51204;&#47029;">&#52572;&#45800;&#44221;&#47196; &#50508;&#44256;&#47532;&#51608; &#46041;&#51201;&#44228;&#54925;&#48277; &#49444;&#44228; &#51204;&#47029;<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#50508;&#44256;&#47532;&#51608;-&#46041;&#51201;&#44228;&#54925;&#48277;-&#49444;&#44228;-&#51204;&#47029;">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13642,7 +14530,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center"><img src="./images/algo03/algo03-04.png" width="300"/></div>
+<div align="center"><img src="./images/algo03/algo03-04.png" width="250"/></div>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13676,7 +14564,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center"><img src="./images/algo03/algo03-05.png" width="300"/></div>
+<div align="center"><img src="./images/algo03/algo03-05.png" width="250"/></div>
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -13690,14 +14578,14 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center"><img src="./images/algo03/algo03-06.png" width="700"/></div>
+<div align="center"><img src="./images/algo03/algo03-06.png" width="600"/></div>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#46041;&#51201;&#44228;&#54925;-&#51204;&#47029;">&#46041;&#51201;&#44228;&#54925; &#51204;&#47029;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;-&#51204;&#47029;">&#182;</a></h4>
+<h4 id="&#46041;&#51201;&#44228;&#54925;&#48277;-&#51204;&#47029;">&#46041;&#51201;&#44228;&#54925;&#48277; &#51204;&#47029;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;&#48277;-&#51204;&#47029;">&#182;</a></h4>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13724,83 +14612,315 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$
-D^{(k)}[i][j] = \text{집합 $\{v_1, v_2, \dots, v_k\}$에 속하는 마디들만을 통해서 $v_i$에서 $v_j$로 가는 최단경로의 길이}
-$$
+\begin{align*}
+D^{(k)}[i][j] &amp;= \text{집합 $\{v_1, v_2, \dots, v_k\}$ 에 속하는 마디만을 통해서} \\
+&amp; \quad\,\text{$v_i$ 에서 $v_j$ 로 가는 최단경로의 길이}
+\end{align*}
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>다음이 성립함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+D^{(0)} &amp;= W \\
+D^{(n)} &amp;= D
+\end{align*}
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>남은 과제: $D^{(k-1)}$ 로부터 $D^{(k)}$ 생성하기.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+D^{(0)} \longrightarrow D^{(1)}\longrightarrow D^{(2)}
+\longrightarrow \cdots \longrightarrow D^{(n-1)}\longrightarrow D^{(n)}
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 예제 그래프에 대해 $D^{(k)}[2][5]$ 계산하기</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(0)}[2][5] = W[2][5] = \infty$ </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(1)}[2][5] = \min (D^{(0)}[2][5], \text{length}[v_2, v_1, v_5]) = \min(\infty, 14) = 14$ </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(2)}[2][5] = D^{(1)}[2][5] = 14$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(3)}[2][5] = D^{(2)}[2][5] = 14$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(4)}[2][5] = \min (D^{(3)}[2][5], d^{(4)}) = \min(14, 5) = 5$</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{align*}
+d^{(4)} &amp;= \min(\text{length}[v_2, v_4, v_5], \text{length}[v_2, v_1, v_4, v_5], \text{length}[v_2, v_3, v_4, v_5]) \\
+&amp;= \min(5, 13, 10) \\
+&amp;= 5
+\end{align*}
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(5)}[2][5] = D^{(4)}[2][5] = 5$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="$D^{(k)}$-&#51032;-&#51116;&#44480;&#51201;-&#49457;&#51656;">$D^{(k)}$ &#51032; &#51116;&#44480;&#51201; &#49457;&#51656;<a class="anchor-link" href="#$D^{(k)}$-&#51032;-&#51116;&#44480;&#51201;-&#49457;&#51656;">&#182;</a></h4>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$D^{(k)}[i][j]$ 를 재귀적으로 정의할 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$D^{(k)}[i][j] = \min \big( D^{(k-1)}[i][j],\,D^{(k-1)}[i][k] + D^{(k-1)}[k][j] \big)$$
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>경우 1: $\{v_1, v_2,\dots, v_k\}$ 에 속한 마디들만을 통해서 $v_i$에서 $v_j$로 가는 최단경로가 $v_k$를 거쳐가지 않는 경우.</p>
+<p>$$D^{(k)}[i][j] = D^{(k-1)}[i][j]$$
+  <br></p>
+<ul>
+<li>예제: $D^{(5)}[1][3] = D^{(4)}[1][3] = 3$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>경우 2: $\{v_1, v_2,\dots, v_k\}$ 에 속한 마디들만을 통해서 $v_i$에서 $v_j$로 가는 최단경로가 $v_k$를 거쳐가는 경우.</p>
+<p>$$D^{(k)}[i][j] = D^{(k-1)}[i][k] + D^{(k-1)}[k][j]$$
+  <br></p>
+<ul>
+<li>예제: $D^{(2)}[5][3] = 7 = 4 + 3 = D^{(1)}[5][2] + D^{(1)}[2][3]$</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이유: 아래 그림 참조</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-07.png" width="500"/></div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54540;&#47196;&#51060;&#46300;-&#50892;&#49500;-&#50508;&#44256;&#47532;&#51608;">&#54540;&#47196;&#51060;&#46300;-&#50892;&#49500; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#54540;&#47196;&#51060;&#46300;-&#50892;&#49500;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>아래 화살표 과정을 구현하는 알고리즘.</li>
+<li>앞서 설명한 재귀적 성질 이용</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+W = D^{(0)} \longrightarrow D^{(1)}\longrightarrow D^{(2)}
+\longrightarrow \cdots \longrightarrow D^{(n-1)}\longrightarrow D^{(n)} = D
+$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력: 마디 수가 $n$인 가중치포함 그래프. 2차원 인접행렬로 표현됨.</li>
+<li>출력: 하나의 마디에서 다른 마디로 가는 최단경로의 길이를 담은 2차원 행렬.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="k">def</span> <span class="nf">floyd_warshall</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+    <span class="c1"># D^(0) 지정</span>
+    <span class="c1"># 주의: deepcopy를 사용하지 않으면 W에 혼란을 발생시킴</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+    <span class="c1"># k가 0부터 (n-1)까지 이동하면서 D가 D^(1), ..., D^(n)을 차례대로 모방함.</span>
+    <span class="c1"># 즉, D를 업데이트하는 방식을 이용하여 최종적으로 D^(n) 생성</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="c1"># 행렬의 인덱스는 0부터 (n-1)까지 이동</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+                <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="p">,</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span> <span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    
+    <span class="c1"># 최종 완성된 D 반환</span>
+    <span class="k">return</span> <span class="n">D</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;">&#50696;&#51228;<a class="anchor-link" href="#&#50696;&#51228;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 예제 그래프의 인접행렬은 다음과 같음.</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 무한에 해당하는 기호 사용</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">inf</span>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<span class="c1"># inf 는 두 마디 사이에 이음선이 없음을 의미함.</span>
+<span class="n">W</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">inf</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">inf</span><span class="p">],</span>
+     <span class="p">[</span><span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13812,12 +14932,769 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>참조: <a href="http://pythontutor.com/visualize.html#code=%23%20%EC%9D%B4%EB%B6%84%EA%B2%80%EC%83%89%20%EC%9E%AC%EA%B7%80%0A%0Adef%20bin2%28n,%20k%29%3A%0A%20%20%20%20%23%20n*k%20%EB%AA%A8%EC%96%91%EC%9D%98%20%ED%96%89%EB%A0%AC%20%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0.%0A%20%20%20%20%23%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%20%EC%A1%B0%EA%B1%B4%EC%A0%9C%EC%8B%9C%EB%B2%95%20%ED%99%9C%EC%9A%A9%0A%20%20%20%20%0A%20%20%20%20B%20%3D%20%5B%5B0%20for%20_%20in%20range%28k%2B1%29%5D%20for%20_%20in%20range%28n%2B1%29%5D%0A%0A%20%20%20%20for%20i%20in%20range%28n%2B1%29%3A%0A%20%20%20%20%20%20%20%20for%20j%20in%20range%28min%28i,%20k%29%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20j%20%3D%3D%200%20or%20j%20%3D%3D%20i%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20B%5Bi%5D%5Bj%5D%20%3D%201%0A%20%20%20%20%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20B%5Bi%5D%5Bj%5D%20%3D%20B%5Bi-1%5D%5Bj-1%5D%20%2B%20B%5Bi-1%5D%5Bj%5D%0A%20%20%20%20%0A%20%20%20%20return%20B%5Bn%5D%5Bk%5D%0A%20%20%20%20%0Abin2%283,%202%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=py3anaconda&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 동적계획 이항계수 알고리즘</a></li>
+<li>플로이드-워셜 알고리즘의 결과: 앞서 살펴 본 행렬 $D$와 동일.</li>
 </ul>
 
 </div>
 </div>
-</div></section></section>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">floyd_warshall</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[0, 1, 3, 1, 4],
+ [8, 0, 3, 2, 5],
+ [10, 11, 0, 4, 7],
+ [6, 7, 2, 0, 3],
+ [3, 4, 6, 4, 0]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=def%20floyd_warshall%28W%29%3A%0A%20%20%20%20n%20%3D%20len%28W%29%0A%20%20%20%20%0A%20%20%20%20%23%20D%5E%280%29%20%EC%A7%80%EC%A0%95%0A%20%20%20%20D%20%3D%20W%0A%0A%20%20%20%20%23%20k%EA%B0%80%200%EB%B6%80%ED%84%B0%20%28n-1%29%EA%B9%8C%EC%A7%80%20%EC%9D%B4%EB%8F%99%ED%95%98%EB%A9%B4%EC%84%9C%20D%EA%B0%80%20D%5E%281%29,%20...,%20D%5E%28n%29%EC%9D%84%20%EC%B0%A8%EB%A1%80%EB%8C%80%EB%A1%9C%20%EB%AA%A8%EB%B0%A9%ED%95%A8.%0A%20%20%20%20%23%20%EC%A6%89,%20D%EB%A5%BC%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC%20%EC%B5%9C%EC%A2%85%EC%A0%81%EC%9C%BC%EB%A1%9C%20D%5E%28n%29%20%EC%83%9D%EC%84%B1%0A%20%20%20%20for%20k%20in%20range%280,%20n%29%3A%0A%20%20%20%20%20%20%20%20%23%20%ED%96%89%EB%A0%AC%EC%9D%98%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%EB%8A%94%200%EB%B6%80%ED%84%B0%20%28n-1%29%EA%B9%8C%EC%A7%80%20%EC%9D%B4%EB%8F%99%0A%20%20%20%20%20%20%20%20for%20i%20in%20range%280,%20n%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20j%20in%20range%280,%20n%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20D%5Bi%5D%5Bj%5D%20%3D%20min%28D%5Bi%5D%5Bj%5D%20,%20D%5Bi%5D%5Bk%5D%2B%20D%5Bk%5D%5Bj%5D%29%0A%20%20%20%20%0A%20%20%20%20%23%20%EC%B5%9C%EC%A2%85%20%EC%99%84%EC%84%B1%EB%90%9C%20D%20%EB%B0%98%ED%99%98%0A%20%20%20%20return%20D%0A%20%20%20%20%0A%23%20%EB%AC%B4%ED%95%9C%EC%97%90%20%ED%95%B4%EB%8B%B9%ED%95%98%EB%8A%94%20%EA%B8%B0%ED%98%B8%20%EC%82%AC%EC%9A%A9%0Afrom%20math%20import%20inf%0A%0A%23%20inf%20%EB%8A%94%20%EB%91%90%20%EB%A7%88%EB%94%94%20%EC%82%AC%EC%9D%B4%EC%97%90%20%EC%9D%B4%EC%9D%8C%EC%84%A0%EC%9D%B4%20%EC%97%86%EC%9D%8C%EC%9D%84%20%EC%9D%98%EB%AF%B8%ED%95%A8.%0AW%20%3D%20%5B%5B0,%201,%20inf,%201,%205%5D,%0A%20%20%20%20%20%5B9,%200,%203,%202,%20inf%5D,%0A%20%20%20%20%20%5Binf,%20inf,%200,%204,%20inf%5D,%0A%20%20%20%20%20%5Binf,%20inf,%202,%200,%203%5D,%0A%20%20%20%20%20%5B3,%20inf,%20inf,%20inf,%200%5D%5D%0A%20%20%20%20%20%0A%20%20%20%20%20%0Afloyd_warshall%28W%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 플로이드-워셜 알고리즘</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52572;&#45800;&#44221;&#47196;-&#54869;&#51064;-&#50508;&#44256;&#47532;&#51608;">&#52572;&#45800;&#44221;&#47196; &#54869;&#51064; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#54869;&#51064;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>이전 함수를 약간 수정하여 최단경로를 출력하는 함수 구현</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#52628;&#44032;&#49324;&#54637;">&#52628;&#44032;&#49324;&#54637;<a class="anchor-link" href="#&#52628;&#44032;&#49324;&#54637;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>두 마디 사이의 최단경로에 사용된 마디 중에서 가장 큰 인덱스를 기억하는 행렬 $P$</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>즉, 다음이 성립해야 함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+P[i][j] =
+\begin{cases}
+k &amp; \text{최단경로의 중간에 사용된 마디의 인덱스 중에서 가장 큰 값이 $k$인 경우} \\
+  &amp; \text{(아래 그림에서 사용된 $v_k$의 인덱스 $k$)}\\
+  &amp; \\
+0 &amp; \text{최단경로의 중간에 사용된 마디가 없는 경우}
+\end{cases}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-07.png" width="500"/></div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>나머지 사항은 동일함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="k">def</span> <span class="nf">floyd_warshall2</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+    <span class="c1"># deepcopy를 사용하지 않으면 D에 혼란을 발생시킴</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+    
+    <span class="c1"># P 행렬 초기화. 모든 항목을 0으로 설정</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># k가 0부터 (n-1)까지 이동하면서 D가 D^(1), ..., D^(n)을 차례대로 모방함.</span>
+    <span class="c1"># 그와 함께 동시에 P 행렬도 차례대로 업데이트함.</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span> <span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
+                    <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span> <span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    
+    <span class="c1"># 최종 완성된 P도 반환</span>
+    <span class="k">return</span> <span class="n">D</span><span class="p">,</span> <span class="n">P</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-1">&#52572;&#45800;&#44221;&#47196; &#52237;&#50612;&#48372;&#44592;: &#48169;&#49885; 1<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-1">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>지정된 두 마디 사이의 최단경로 찍어보기</li>
+<li>아래 <code>path</code> 함수는 두 마디 사이의 최단 경로상에 위치한 마디를 순서대로 보여줌.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="c1"># 인덱스가 0부터 출발하기에 -1 또는 +1을 적절히 조절해야 함.</span>
+    <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;:-$v_5$&#50640;&#49436;-$v_3$&#51004;&#47196;-&#44032;&#45716;-&#52572;&#45800;&#44221;&#47196;&#49345;&#51032;-&#51473;&#44036;&#47560;&#46356;-&#54869;&#51064;">&#50696;&#51228;: $v_5$&#50640;&#49436; $v_3$&#51004;&#47196; &#44032;&#45716; &#52572;&#45800;&#44221;&#47196;&#49345;&#51032; &#51473;&#44036;&#47560;&#46356; &#54869;&#51064;<a class="anchor-link" href="#&#50696;&#51228;:-$v_5$&#50640;&#49436;-$v_3$&#51004;&#47196;-&#44032;&#45716;-&#52572;&#45800;&#44221;&#47196;&#49345;&#51032;-&#51473;&#44036;&#47560;&#46356;-&#54869;&#51064;">&#182;</a></h4><ul>
+<li>$v_1$과 $v_4$를 지나간다는 사실을 다음과 같이 확인해줌.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">floyd_warshall2</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">P</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[-1, -1, 3, -1, 3],
+ [4, -1, -1, -1, 3],
+ [4, 4, -1, -1, 3],
+ [4, 4, -1, -1, -1],
+ [-1, 0, 3, 0, -1]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 4 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=def%20path%28P,%20q,%20r%29%3A%0A%20%20%20%20%23%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%80%200%EB%B6%80%ED%84%B0%20%EC%B6%9C%EB%B0%9C%ED%95%98%EA%B8%B0%EC%97%90%20-1%20%EB%98%90%EB%8A%94%20%2B1%EC%9D%84%20%EC%A0%81%EC%A0%88%ED%9E%88%20%EC%A1%B0%EC%A0%88%ED%95%B4%EC%95%BC%20%ED%95%A8.%0A%20%20%20%20if%20P%5Bq-1%5D%5Br-1%5D%20!%3D%20-1%3A%0A%20%20%20%20%20%20%20%20v%20%3D%20P%5Bq-1%5D%5Br-1%5D%0A%0A%20%20%20%20%20%20%20%20path%28P,%20q,%20v%2B1%29%0A%20%20%20%20%20%20%20%20print%28v%2B1,end%3D&#39;%20&#39;%29%0A%20%20%20%20%20%20%20%20path%28P,%20v%2B1,%20r%29%0A%0AP%20%3D%20%5B%5B-1,%20-1,%203,%20-1,%203%5D,%0A%20%20%20%20%5B4,%20-1,%20-1,%20-1,%203%5D,%0A%20%20%20%20%5B4,%204,%20-1,%20-1,%203%5D,%0A%20%20%20%20%5B4,%204,%20-1,%20-1,%20-1%5D,%0A%20%20%20%20%5B-1,%200,%203,%200,%20-1%5D%5D%0A%0Apath%28P,%205,%203%29%20%20%20%20%20%20%20%20%20&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 최단경로 확인하기 1</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-2">&#52572;&#45800;&#44221;&#47196; &#52237;&#50612;&#48372;&#44592;: &#48169;&#49885; 2<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-2">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>최단경로 상에 위치한 마디를 리스트로 담을 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">route</span><span class="p">):</span>
+    <span class="c1"># 인덱스가 0부터 출발하기에 -1 또는 +1을 적절히 조절해야 함.</span>
+    <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">route</span><span class="p">)</span>
+        <span class="n">route</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">route</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">route</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참조: <a href="http://pythontutor.com/visualize.html#code=def%20path2%28P,%20q,%20r,%20route%29%3A%0A%20%20%20%20%23%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%EA%B0%80%200%EB%B6%80%ED%84%B0%20%EC%B6%9C%EB%B0%9C%ED%95%98%EA%B8%B0%EC%97%90%20-1%20%EB%98%90%EB%8A%94%20%2B1%EC%9D%84%20%EC%A0%81%EC%A0%88%ED%9E%88%20%EC%A1%B0%EC%A0%88%ED%95%B4%EC%95%BC%20%ED%95%A8.%0A%20%20%20%20if%20P%5Bq-1%5D%5Br-1%5D%20!%3D%20-1%3A%0A%20%20%20%20%20%20%20%20v%20%3D%20P%5Bq-1%5D%5Br-1%5D%0A%0A%20%20%20%20%20%20%20%20path2%28P,%20q,%20v%2B1,%20route%29%0A%20%20%20%20%20%20%20%20route.append%28v%2B1%29%0A%20%20%20%20%20%20%20%20path2%28P,%20v%2B1,%20r,%20route%29%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20return%20route%0A%20%20%20%20%0AP%20%3D%20%5B%5B-1,%20-1,%203,%20-1,%203%5D,%0A%20%20%20%20%20%5B4,%20-1,%20-1,%20-1,%203%5D,%0A%20%20%20%20%20%5B4,%204,%20-1,%20-1,%203%5D,%0A%20%20%20%20%20%5B4,%204,%20-1,%20-1,%20-1%5D,%0A%20%20%20%20%20%5B-1,%200,%203,%200,%20-1%5D%5D%0A%20%20%20%20%20%0Aprint%28path2%28P,%205,%203,%20%5B%5D%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor: 최단경로 확인하기 2</a></li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>위 결과를 이용하여 경로를 보다 예쁘게 출력할 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">route</span> <span class="o">=</span> <span class="n">path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">route</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">route</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">route</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5 -&gt; 1 -&gt; 4 -&gt; 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_path2</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 -&gt; 4 -&gt; 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-3">&#52572;&#45800;&#44221;&#47196; &#52237;&#50612;&#48372;&#44592;: &#48169;&#49885; 3<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#52237;&#50612;&#48372;&#44592;:-&#48169;&#49885;-3">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+P[i][j] =
+\begin{cases}
+k &amp; \text{최단경로상의 마디 중에서 $v_i$에 가장 가까운 마디의 인덱스가 $k$인 경우} \\
+  &amp; \\
+0 &amp; \text{최단경로의 중간에 사용된 마디가 없는 경우}
+\end{cases}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="k">def</span> <span class="nf">floyd_warshall3</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+    <span class="n">D</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span>   <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">inf</span><span class="p">:</span>
+            <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
+    
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">sum_ik_kj</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">sum_ik_kj</span><span class="p">:</span>
+            <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum_ik_kj</span>
+            <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>  <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">D</span><span class="p">,</span> <span class="n">P</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">path3</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="c1"># 인덱스가 0부터 출발하기에 -1 또는 +1을 적절히 조절해야 함.</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">route</span> <span class="o">=</span> <span class="s1">&#39; → &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최단길이:</span><span class="si">{</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2">, 최단경로: </span><span class="si">{</span><span class="n">route</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">D</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">floyd_warshall3</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path3</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>최단길이: 6, 최단경로: 5 → 1 → 4 → 3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path3</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>최단길이: 5, 최단경로: 2 → 4 → 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3&#51208;-&#46041;&#51201;&#44228;&#54925;&#48277;&#44284;-&#52572;&#51201;&#54868;-&#47928;&#51228;">3&#51208; &#46041;&#51201;&#44228;&#54925;&#48277;&#44284; &#52572;&#51201;&#54868; &#47928;&#51228;<a class="anchor-link" href="#3&#51208;-&#46041;&#51201;&#44228;&#54925;&#48277;&#44284;-&#52572;&#51201;&#54868;-&#47928;&#51228;">&#182;</a></h2>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#46041;&#51201;&#44228;&#54925;&#48277;&#50640;-&#51032;&#54620;-&#49444;&#44228;-&#51208;&#52264;">&#46041;&#51201;&#44228;&#54925;&#48277;&#50640; &#51032;&#54620; &#49444;&#44228; &#51208;&#52264;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;&#48277;&#50640;-&#51032;&#54620;-&#49444;&#44228;-&#51208;&#52264;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>문제의 입력에 대해 최적의 해답을 제공하는 재귀 관계식 설정</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>상향식으로 최적의 해답을 계산</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>상향식으로 최적의 해답을 구축</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52572;&#51201;&#51032;-&#50896;&#52825;">&#52572;&#51201;&#51032; &#50896;&#52825;<a class="anchor-link" href="#&#52572;&#51201;&#51032;-&#50896;&#52825;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>어떤 문제의 입력사례에 대한 최적의 해가 그 입력사례를 분할한 모든 부분사례에 대한 
+  최적의 해를 포함하고 있으면, 그 문제는 <strong>최적의 원칙이 적용된다</strong> 라고 말함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>최적의 원칙이 적용되는 문제는 동적계획법으로 해결할 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50696;&#51228;:-&#52572;&#45800;&#44221;&#47196;-&#47928;&#51228;">&#50696;&#51228;: &#52572;&#45800;&#44221;&#47196; &#47928;&#51228;<a class="anchor-link" href="#&#50696;&#51228;:-&#52572;&#45800;&#44221;&#47196;-&#47928;&#51228;">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$v_k$를 $v_i$에서 $v_j$로 가는 최적경로 상의 마디라고 하면,
+  $v_i$에서 $v_k$ 로 가는 부분경로와 $v_k$에서 $v_j$로 가는
+  부분경로도 반드시 최적이어야 함.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-07.png" width="500"/></div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#52572;&#51201;&#51032;-&#50896;&#52825;&#51060;-&#51201;&#50857;&#46104;&#51648;-&#50506;&#45716;-&#50696;&#51228;">&#52572;&#51201;&#51032; &#50896;&#52825;&#51060; &#51201;&#50857;&#46104;&#51648; &#50506;&#45716; &#50696;&#51228;<a class="anchor-link" href="#&#52572;&#51201;&#51032;-&#50896;&#52825;&#51060;-&#51201;&#50857;&#46104;&#51648;-&#50506;&#45716;-&#50696;&#51228;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center"><img src="./images/algo03/algo03-08.png" width="200"/></div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$v_1$에서 $v_4$로의 (순환이 없는) 최장경로는 $[v_1, v_3, v_2, v_4]$ 가 된다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>그러나 이 경로의 부분 경로인 $v_1$에서 $v_3$으로의 (순환이 없는) 최장경로는 
+  $[v_1, v_3]$이 아니고, $[v_1, v_2, v_3]$ 이다. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>따라서 최적의 원칙이 적용되지 않는다.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 
