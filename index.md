@@ -28,6 +28,16 @@
         * 4절: 빠른정렬(분할교환정렬)
         * 5절: 쉬트라쎈의 행렬곱셈 알고리즘
         * 8절: 분할정복을 사용할 수 없는 경우
+* 3장 동적계획법
+    * 1편 &nbsp;
+        [[html]](./slides/Algo-03-Dynamic_Programming-1.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-03-Dynamic_Programming-1-slides.pdf) &nbsp;
+        * 1절: 이항계수 구하기
+        * 2절: 플로이드-워셜 최단경로 알고리즘
+        * 3절: 동적계획법과 최적화 문제
+    * 2편 &nbsp;
+        * 4절: 외판원 문제
+        * 0-1 배낭채우기 문제(4장 5절)
 * ...
 
 *주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
