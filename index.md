@@ -26,7 +26,7 @@
         [[html]](./slides/Algo-02-Divide-and-Conquer-2.slides.html) &nbsp;
         [[pdf]](./slides/Algo-02-Divide-and-Conquer-2-slides.pdf) &nbsp;
         * 4절: 빠른정렬(분할교환정렬)
-        * 5절: 쉬트라쎈의 행렬곱셈 알고리즘
+        * 5절: 슈트라쎈의 행렬곱셈 알고리즘
         * 8절: 분할정복을 사용할 수 없는 경우
 * 3장 동적계획법
     * 1편 &nbsp;
