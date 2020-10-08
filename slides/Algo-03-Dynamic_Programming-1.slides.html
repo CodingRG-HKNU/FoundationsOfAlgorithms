@@ -13280,7 +13280,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#46041;&#51201;&#44228;&#54925;">&#46041;&#51201;&#44228;&#54925;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;">&#182;</a></h2>
+<h2 id="&#46041;&#51201;&#44228;&#54925;&#48277;">&#46041;&#51201;&#44228;&#54925;&#48277;<a class="anchor-link" href="#&#46041;&#51201;&#44228;&#54925;&#48277;">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13474,9 +13474,10 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 \begin{align*}
-(x + y)^n &amp;= b_0\, x^n\, y^0 + b_1\, x^{n-1}\, y^1 + b_2\, x^{n-2}\, y^2 + 
-\cdots + b_{n-1}\, x^1\, y^{n-1} + b_n\, x^0\, y^n \\
-&amp;= \sum_{k=0}^{n} {n\choose k}\, x^{n-k}\, y^k
+(x + y)^n &amp;= b_{n,0}\, x^n\, y^0 + b_{n,1}\, x^{n-1}\, y^1 + b_{n,2}\, x^{n-2}\, y^2 + 
+\cdots + b_{n, (n-1)}\, x^1\, y^{n-1} + b_{n,n}\, x^0\, y^n \\
+&amp;= \sum_{k=0}^{n} {n\choose k}\, x^{n-k}\, y^k \\
+&amp;= \sum_{k=0}^{n} b_{n,k}\, x^{n-k}\, y^k
 \end{align*}
 </div>
 </div>
@@ -13532,7 +13533,26 @@ $$
 $$
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>참고:</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+a_{n, k} = a_{(n-1), (k-1)} + a_{(n-1), k}
+$$
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13547,13 +13567,13 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>1
-1 1
-1 2 1
-1 3 3 1
-1 4 6 4 1
-1 5 10 10 5 1
-...</code></pre>
+<pre><code>        1
+        1 1
+        1 2 1
+        1 3 3 1
+        1 4 6 4 1
+        1 5 10 10 5 1
+        ...</code></pre>
 
 </div>
 </div>
@@ -13579,19 +13599,24 @@ $$
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#51060;&#54637;&#44228;&#49688;-&#51116;&#44480;-&#50508;&#44256;&#47532;&#51608;">&#51060;&#54637;&#44228;&#49688; &#51116;&#44480; &#50508;&#44256;&#47532;&#51608;<a class="anchor-link" href="#&#51060;&#54637;&#44228;&#49688;-&#51116;&#44480;-&#50508;&#44256;&#47532;&#51608;">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이항계수 재귀 알고리즘</span>
-
-<span class="k">def</span> <span class="nf">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="c1"># 초기값</span>
     <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
-
+    <span class="c1"># 재귀</span>
     <span class="k">else</span><span class="p">:</span>    
         <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
@@ -13600,12 +13625,12 @@ $$
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>재귀 피보나찌 수열 함수와 유사. (1장 참조)</li>
+<li>참고: 재귀 피보나찌 수열 함수와 유사. (1장)</li>
 </ul>
 
 </div>
@@ -13615,15 +13640,15 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">n</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13741,15 +13766,15 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">fi</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">fi</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -14125,7 +14150,7 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>방향 그래프(directed graph, or digraph)</li>
+<li>방향 그래프(directed graph, or digraph): 이음선에 방향이 포함된 그래프</li>
 </ul>
 
 </div>
@@ -14571,7 +14596,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#52572;&#45800;&#44221;&#47196;&#44600;&#51060;-&#54665;&#47148;-&#44396;&#54616;&#44592;">&#52572;&#45800;&#44221;&#47196;&#44600;&#51060; &#54665;&#47148; &#44396;&#54616;&#44592;<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;&#44600;&#51060;-&#54665;&#47148;-&#44396;&#54616;&#44592;">&#182;</a></h4>
+<h4 id="&#52572;&#45800;&#44221;&#47196;-&#44600;&#51060;&#54665;&#47148;-&#44396;&#54616;&#44592;">&#52572;&#45800;&#44221;&#47196; &#44600;&#51060;&#54665;&#47148; &#44396;&#54616;&#44592;<a class="anchor-link" href="#&#52572;&#45800;&#44221;&#47196;-&#44600;&#51060;&#54665;&#47148;-&#44396;&#54616;&#44592;">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14618,7 +14643,7 @@ D^{(k)}[i][j] &amp;= \text{집합 $\{v_1, v_2, \dots, v_k\}$ 에 속하는 마�
 \end{align*}
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14638,7 +14663,7 @@ D^{(n)} &amp;= D
 \end{align*}
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14730,8 +14755,8 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 \begin{align*}
-d^{(4)} &amp;= \min(\text{length}[v_2, v_1, v_5], \text{length}[v_2, v_4, v_5], \text{length}[v_2, v_1, v_4, v_5], \text{length}[v_2, v_3, v_4, v_5]) \\
-&amp;= \min(14, 5, 13, 10) \\
+d^{(4)} &amp;= \min(\text{length}[v_2, v_4, v_5], \text{length}[v_2, v_1, v_4, v_5], \text{length}[v_2, v_3, v_4, v_5]) \\
+&amp;= \min(5, 13, 10) \\
 &amp;= 5
 \end{align*}
 </div>
