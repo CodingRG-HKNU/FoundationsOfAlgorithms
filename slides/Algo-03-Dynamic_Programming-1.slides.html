@@ -13760,7 +13760,7 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>${n \choose k}$를 구하기 위해 아래 그림과 같이 2차원 행렬 $B$의 항목을 채워나가야 함.<ul>
-<li>$B[0][0]$ 에서 지작</li>
+<li>$B[0][0]$ 에서 시작</li>
 <li>위에서 아래로 재귀 관계식을 적용하여 파스칼의 삼각형을 완성해 나가야 함.</li>
 </ul>
 </li>
@@ -13833,7 +13833,7 @@ $$
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이분검색 재귀</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 이분검색 동적계획법</span>
 
 <span class="k">def</span> <span class="nf">bin2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="c1"># n x k 모양의 행렬 준비하기.</span>
@@ -13920,7 +13920,7 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>반면에 재귀 알고리즘은 30여초 걸림. $n, k$가 좀 더 커지면 매우 오래 걸림.</li>
+<li>반면에 재귀 알고리즘은 30여초 이상 걸림. $n, k$가 좀 더 커지면 매우 오래 걸림.</li>
 </ul>
 
 </div>
@@ -13953,7 +13953,7 @@ $$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>30.6296808719635
+<pre>44.27552771568298
 </pre>
 </div>
 </div>
@@ -14730,8 +14730,8 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 \begin{align*}
-d^{(4)} &amp;= \min(\text{length}[v_2, v_4, v_5], \text{length}[v_2, v_1, v_4, v_5], \text{length}[v_2, v_3, v_4, v_5]) \\
-&amp;= \min(5, 13, 10) \\
+d^{(4)} &amp;= \min(\text{length}[v_2, v_1, v_5], \text{length}[v_2, v_4, v_5], \text{length}[v_2, v_1, v_4, v_5], \text{length}[v_2, v_3, v_4, v_5]) \\
+&amp;= \min(14, 5, 13, 10) \\
 &amp;= 5
 \end{align*}
 </div>
@@ -15075,7 +15075,7 @@ $$
     <span class="n">D</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
     
-    <span class="c1"># P 행렬 초기화. 모든 항목을 0으로 설정</span>
+    <span class="c1"># P 행렬 초기화. 모든 항목을 -1로 설정</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
             <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -15469,7 +15469,7 @@ $$
         <span class="k">while</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
             <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">route</span> <span class="o">=</span> <span class="s1">&#39; → &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">path</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최단길이:</span><span class="si">{</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2">, 최단경로: </span><span class="si">{</span><span class="n">route</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;최단길이:</span><span class="si">{D[i-1][j-1]:&gt;2}</span><span class="s2">, 최단경로: </span><span class="si">{route}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
