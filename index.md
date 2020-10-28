@@ -40,6 +40,11 @@
         [[pdf]](./slides/Algo-03-Dynamic_Programming-2-slides.pdf) &nbsp;
         * 6절: 외판원 문제
         * 4장 5절: 0-1 배낭 채우기 문제
+* 4장 탐욕 알고리즘
+    * 1편 &nbsp;
+        [[html]](./slides/Algo-04-Greedy-Approach-1.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-04-Greedy-Approach-1-slides.pdf) &nbsp;
+        * 1절: 최소비용 신장트리
 * ...
 
 *주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
