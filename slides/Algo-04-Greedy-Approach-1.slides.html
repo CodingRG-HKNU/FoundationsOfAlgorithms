@@ -13345,11 +13345,11 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>500원: 0개
-250원: 1개
-100원: 1개
-50원: 0개
-10원: 1개</code></pre>
+<pre><code>        500원: 0개
+        250원: 1개
+        100원: 1개
+        50원: 0개
+        10원: 1개</code></pre>
 
 </div>
 </div>
@@ -13431,10 +13431,10 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>120원: 1개
-100원: 0개
- 50원: 0개
- 10원: 4개</code></pre>
+<pre><code>        120원: 1개
+        100원: 0개
+         50원: 0개
+         10원: 4개</code></pre>
 
 </div>
 </div>
@@ -13453,10 +13453,10 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>120원: 0개
-100원: 1개
- 50원: 1개
- 10원: 1개</code></pre>
+<pre><code>        120원: 0개
+        100원: 1개
+         50원: 1개
+         10원: 1개</code></pre>
 
 </div>
 </div>
@@ -14107,10 +14107,221 @@ $F = \emptyset$</p>
 <h3 id="&#54532;&#47548;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;">&#54532;&#47548; &#50508;&#44256;&#47532;&#51608; &#44396;&#54788;<a class="anchor-link" href="#&#54532;&#47548;-&#50508;&#44256;&#47532;&#51608;-&#44396;&#54788;">&#182;</a></h3>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">inf</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+</pre></div>
+
+    </div>
 </div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prim</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>                  <span class="c1"># 마디: 그래프 행의 인덱스를 마디 이름으로 사용</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>       <span class="c1"># 신장트리에 포함될 이음선들의 집합. </span>
+                                <span class="c1"># 키: 마디, </span>
+                                <span class="c1"># 키값: 추가되는 이음선에 사용된 다른 마디들의 리스트</span>
+    <span class="n">nearest</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">V</span>                       <span class="c1"># i번 인덱스 값: 신장트리에 속한 마디 중 가장 가까운 마디</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">V</span><span class="p">)]</span>  <span class="c1"># i번 인덱스 값: nearest[i]와 i를 잇는 이음선의 가중치</span>
+                                            <span class="c1"># -1 이면 이미 신장트리에 포함된 것으로 간주</span>
+    <span class="n">distance</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                        <span class="c1"># V0 는 이미 포함되어 있다고 가정</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>        <span class="c1"># 신장트리에 속할 이음선을 모든 마디가 선택될 때가지 하나씩 추가</span>
+        <span class="c1"># distance 정보를 이용하여 아직 신장트리에 속하지 않으면서 가장 가까운 마디 선택</span>
+        <span class="nb">min</span> <span class="o">=</span> <span class="n">inf</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">):</span>
+                <span class="nb">min</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">vnear</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="c1"># 선택된 마디와 가장 가까운 마디 사이의 이음선을 신장트리에 추가</span>
+        <span class="n">F</span><span class="p">[</span><span class="n">nearest</span><span class="p">[</span><span class="n">vnear</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vnear</span><span class="p">)</span>
+        <span class="n">distance</span><span class="p">[</span><span class="n">vnear</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                <span class="c1"># 선택된 마디 표시</span>
+        <span class="c1"># 모든 마디를 대상으로 distance와 nearest 업데이트 (F가 수정되었기 때문)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">vnear</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">vnear</span><span class="p">]</span>
+                <span class="n">nearest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vnear</span>
+    <span class="c1"># 신장트리 반환</span>
+    <span class="k">return</span> <span class="n">F</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>   <span class="mi">3</span><span class="p">,</span>   <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">3</span><span class="p">,</span>   <span class="mi">6</span><span class="p">,</span>   <span class="n">inf</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">3</span><span class="p">,</span>   <span class="mi">3</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">4</span><span class="p">,</span>   <span class="mi">2</span>  <span class="p">],</span>
+     <span class="p">[</span><span class="n">inf</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>   <span class="mi">4</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">5</span>  <span class="p">],</span>
+     <span class="p">[</span><span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>   <span class="mi">5</span><span class="p">,</span>   <span class="mi">0</span>  <span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prim</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defaultdict(list, {0: [1, 2], 2: [4, 3]})</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#53076;&#46300;-&#49444;&#47749;">&#53076;&#46300; &#49444;&#47749;<a class="anchor-link" href="#&#53076;&#46300;-&#49444;&#47749;">&#182;</a></h4>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>                  <span class="c1"># 마디: 그래프 행의 인덱스를 마디 이름으로 사용</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>       <span class="c1"># 신장트리에 포함될 이음선들의 집합. </span>
+                            <span class="c1"># 키: 마디, </span>
+                            <span class="c1"># 키값: 추가되는 이음선에 사용된 다른 마디들의 리스트</span>
+</pre></div>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">nearest</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">V</span>                       <span class="c1"># i번 인덱스 값: 신장트리에 속한 마디 중 가장 가까운 마디</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">V</span><span class="p">)]</span>  <span class="c1"># i번 인덱스 값: nearest[i]와 i를 잇는 이음선의 가중치</span>
+                                        <span class="c1"># -1 이면 이미 신장트리에 포함된 것으로 간주</span>
+<span class="n">distance</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                        <span class="c1"># V0 는 이미 포함되어 있다고 가정</span>
+</pre></div>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>        <span class="c1"># 신장트리에 속할 이음선을 모든 마디가 선택될 때가지 하나씩 추가</span>
+</pre></div>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># distance 정보를 이용하여 아직 신장트리에 속하지 않으면서 가장 가까운 마디 선택</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">inf</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">):</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">vnear</span> <span class="o">=</span> <span class="n">i</span>
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># 선택된 마디와 가장 가까운 마디 사이의 이음선을 신장트리에 추가</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">nearest</span><span class="p">[</span><span class="n">vnear</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vnear</span><span class="p">)</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">vnear</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>                <span class="c1"># 선택된 마디 표시</span>
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="c1"># 모든 마디를 대상으로 distance와 nearest 업데이트 (F가 수정되었기 때문)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">vnear</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">vnear</span><span class="p">]</span>
+            <span class="n">nearest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vnear</span>
+</pre></div>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54532;&#47548;-&#50508;&#44256;&#47532;&#51608;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#54532;&#47548; &#50508;&#44256;&#47532;&#51608; &#51068;&#51221; &#49884;&#44036;&#48373;&#51105;&#46020; &#48516;&#49437;<a class="anchor-link" href="#&#54532;&#47548;-&#50508;&#44256;&#47532;&#51608;-&#51068;&#51221;-&#49884;&#44036;&#48373;&#51105;&#46020;-&#48516;&#49437;">&#182;</a></h3>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>단위연산: 중첩 for 반복문</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>입력크기: 마디 수 $n$</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>일정 시간복잡도: $n-1$ 번 반복되는 명령문 두 개가 $n-1$번 반복되는 반복문 안에 들어 있음. 
+  따라서 다음이 성립:</li>
+</ul>
 
 </div>
 </div>
@@ -14118,24 +14329,12 @@ $F = \emptyset$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+$$
+T(n) = 2(n-1)(n-1) = \Theta(n^2)
+$$
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div></section></section>
+</div></div></section></section>
 </div>
 </div>
 
