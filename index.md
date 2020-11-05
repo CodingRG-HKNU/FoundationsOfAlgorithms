@@ -44,7 +44,7 @@
         [[html]](./slides/Algo-04-Greedy-Approach-1.slides.html) &nbsp;
         [[pdf]](./slides/Algo-04-Greedy-Approach-1-slides.pdf) &nbsp;
         * 1절 최소비용 신장트리
-    * 1부 &nbsp;
+    * 2부 &nbsp;
         [[html]](./slides/Algo-04-Greedy-Approach-2.slides.html) &nbsp;
         [[pdf]](./slides/Algo-04-Greedy-Approach-2-slides.pdf) &nbsp;
         * 2절 단일출발점 최단경로: 다익스트라 알고리즘
