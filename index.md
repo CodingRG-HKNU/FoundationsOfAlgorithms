@@ -49,6 +49,12 @@
         [[pdf]](./slides/Algo-04-Greedy-Approach-2-slides.pdf) &nbsp;
         * 2절 단일출발점 최단경로: 다익스트라 알고리즘
         * 5절 탐욕 알고리즘과 동적계획법 알고리즘 비교: 0-1 배낭채우기 문제
+* 5장 되추적 &nbsp;
+    [[html]](./slides/Algo-05-Backtracking.slides.html) &nbsp;
+    [[pdf]](./slides/Algo-05-Backtracking-slides.pdf) &nbsp;
+        * 1절 되추적 기법
+        * 2절 n-여왕말 문제
+        * 5절 그래프 색칠하기
 * ...
 
 *주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
