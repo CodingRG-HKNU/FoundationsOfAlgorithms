@@ -56,11 +56,10 @@
         * 1절 되추적 기법
         * 2절 n-여왕말 문제
         * 5절 그래프 색칠하기
-        * 부록: 제네릭 프로그래밍(Generic programming)
     * 2부 &nbsp;
         [[html]](./slides/Algo-05-Backtracking-2.slides.html) &nbsp;
         [[pdf]](./slides/Algo-05-Backtracking-2-slides.pdf) &nbsp;
-        * 부록: 제네릭 프로그래밍(Generic programming)
+        * 부록: 제네릭 프로그래밍(Generic programming) 활용
 * 9장 계산복잡도와 해결난이도: NP 이론 소개 &nbsp;
     [[html]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory.slides.html) &nbsp;
     [[pdf]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory-slides.pdf) &nbsp;
