@@ -25,7 +25,7 @@
     * 2부 &nbsp;
         [[html]](./slides/Algo-02-Divide-and-Conquer-2.slides.html) &nbsp;
         [[pdf]](./slides/Algo-02-Divide-and-Conquer-2-slides.pdf) &nbsp;
-        * 4절 빠른정렬(분할교환정렬)
+        * 4절 퀵정렬(분할교환정렬)
         * 5절 슈트라쎈의 행렬곱셈 알고리즘
         * 8절 분할정복을 사용할 수 없는 경우
 * 3장 동적계획법
@@ -49,14 +49,25 @@
         [[pdf]](./slides/Algo-04-Greedy-Approach-2-slides.pdf) &nbsp;
         * 2절 단일출발점 최단경로: 다익스트라 알고리즘
         * 5절 탐욕 알고리즘과 동적계획법 알고리즘 비교: 0-1 배낭채우기 문제
-* 5장 되추적 &nbsp;
-    [[html]](./slides/Algo-05-Backtracking.slides.html) &nbsp;
-    [[pdf]](./slides/Algo-05-Backtracking-slides.pdf) &nbsp;
-
-    * 1절 되추적 기법
-    * 2절 n-여왕말 문제
-    * 5절 그래프 색칠하기
-    * 부록: 제네릭 프로그래밍(Generic programming)
+* 5장 되추적 
+    * 1부 &nbsp;
+        [[html]](./slides/Algo-05-Backtracking-1.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-05-Backtracking-1-slides.pdf) &nbsp;
+        * 1절 되추적 기법
+        * 2절 n-여왕말 문제
+        * 5절 그래프 색칠하기
+        * 부록: 제네릭 프로그래밍(Generic programming)
+    * 2부 &nbsp;
+        [[html]](./slides/Algo-05-Backtracking-2.slides.html) &nbsp;
+        [[pdf]](./slides/Algo-05-Backtracking-2-slides.pdf) &nbsp;
+        * 부록: 제네릭 프로그래밍(Generic programming)
+* 9장 계산복잡도와 해결난이도: NP 이론 소개 &nbsp;
+    [[html]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory.slides.html) &nbsp;
+    [[pdf]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory-slides.pdf) &nbsp;
+    * 1절 계산복잡도와 해결난이도
+    * 2절 입력크기(input size)
+    * 3절 해결난이도 분류
+    * 4절 NP 이론
 * ...
 
 *주의: HTML 슬라이드를 사용할 경우 전진과 후진은 `space`와 `shift+space` 키를 활용할 것.*
