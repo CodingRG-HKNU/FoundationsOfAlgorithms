@@ -63,9 +63,9 @@
 * 9장 계산복잡도와 해결난이도: NP 이론 소개 &nbsp;
     [[html]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory.slides.html) &nbsp;
     [[pdf]](./slides/Algo-09-Computational-Complexity-Intractability-NP-Theory-slides.pdf) &nbsp;
-    * 1절 계산복잡도와 해결난이도
+    * 1절 계산복잡도와 다루기 난이도
     * 2절 입력크기(input size)
-    * 3절 해결난이도 분류
+    * 3절 다루기 난이도 분류
     * 4절 NP 이론
 * ...
 
