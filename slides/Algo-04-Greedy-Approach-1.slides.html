@@ -14327,9 +14327,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>아래 비방향그래프의 최소신장트리를 찾는 과정을 단계별로 묘사하라.</li>
-</ol>
+<h4 id="&#47928;&#51228;-1">&#47928;&#51228; 1<a class="anchor-link" href="#&#47928;&#51228;-1">&#182;</a></h4><p>아래 비방향그래프의 최소신장트리를 찾는 과정을 단계별로 묘사하라.</p>
 
 </div>
 </div>
@@ -14345,14 +14343,52 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>신장트리가 구성되는 순서는 다음과 같음</p>
-<p><code>(1, 4) -&gt; (4, 8) -&gt; (8, 9) -&gt; (4, 5) -&gt; (9, 10) -&gt; (10, 6) -&gt; (4, 3) -&gt; (3, 7) -&gt; (1, 2)</code></p>
+<li><p>신장트리에 추가되는 이음선의 순서는 다음과 같음:</p>
+<ul>
+<li>Y = {1}<ul>
+<li>v4-v1의 거리가 17로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4}<ul>
+<li>v8-v4의 거리가 3으로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8}<ul>
+<li>v9-v8의 거리가 4로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9}<ul>
+<li>v5-v4의 거리가 10으로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5}<ul>
+<li>v10-v9의 거리가 12로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5, 10}<ul>
+<li>v6-v10의 거리가 6으로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5, 10, 6}<ul>
+<li>v3-v4의 거리가 18로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5, 10, 6, 3}<ul>
+<li>v7-v3의 거리가 5로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5, 10, 6, 3, 7}<ul>
+<li>v2-v1의 거리가 32로 가장 짧음.</li>
+</ul>
+</li>
+<li>Y = {1, 4, 8, 9, 5, 10, 6, 3, 7, 2}</li>
+</ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14389,7 +14425,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="p">[[</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">32</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span>  <span class="mi">17</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">],</span>
@@ -14421,7 +14457,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prim</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
@@ -14437,7 +14473,7 @@ $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
